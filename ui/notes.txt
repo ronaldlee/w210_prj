@@ -10,3 +10,9 @@ cd brief_podcast
 npm install
 npm run dev  -> open the site in https://localhost:5173 
 
+###
+Install tailwindcss
+https://www.freecodecamp.org/news/how-to-install-tailwindcss-in-react/
+
+npm install -D tailwindcss postcss autoprefixer
+
