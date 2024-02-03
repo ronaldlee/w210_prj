@@ -1,0 +1,12 @@
+install latest node:
+nvm install node 
+
+nvm alias default [version] <- this make sure is saved for new terminal
+
+create project:
+npm create vite@latest brief_podcast -- --template react-ts
+
+cd brief_podcast
+npm install
+npm run dev  -> open the site in https://localhost:5173 
+
