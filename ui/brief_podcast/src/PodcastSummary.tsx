@@ -23,6 +23,10 @@ Play summary button
         <div className="w-[310px] h-[72px] left-[21px] top-[486px] absolute justify-center items-center inline-flex">
             <div className="w-[54px] h-[54px] relative"><img src="../assets/PlaySummaryButton.svg"/></div>
         </div>
+
+Back button
+        <div className="w-[53px] h-[52px] relative" />
+        <div className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
 */
 
 function App() {
@@ -57,6 +61,9 @@ function App() {
         <div className="w-[310px] h-[72px] left-[21px] top-[486px] absolute justify-center items-center inline-flex">
             <div className="w-[54px] h-[54px] relative"><img src="../assets/PlaySummaryButton.svg"/></div>
         </div>
+    </div>
+    <div className="w-[69px] h-[82px] p-[5px] left-[5px] top-0 absolute justify-center items-center gap-2.5 inline-flex">
+        <div className="w-[53px] h-[52px] relative"><img class="fill-[#f8fafc]" src="../assets/BackButton.svg"/></div>
     </div>
 </div>
 </div>

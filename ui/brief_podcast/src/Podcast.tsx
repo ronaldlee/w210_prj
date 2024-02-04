@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 
 /**
 Podcast profile pic
-    <img className="w-[375px] h-[520px] left-0 top-0 absolute" src="https://via.placeholder.com/375x520" />
-    <img className="w-[375px] h-[520px] left-0 top-0 absolute" src="../assets/podprofile_lex.png" />
+    <img className="w-[375px] h-[520px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src="https://via.placeholder.com/375x520" />
+    <img className="w-[375px] h-[520px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src="../assets/podprofile_lex.png" />
 
 
 Podcast thumb:
@@ -19,6 +19,10 @@ Play button
 AI icon
                     <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex" />
                     <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src='../assets/AiIcon.svg'/></div>
+
+Back button
+        <div className="w-[53px] h-[52px] relative" />
+        <div className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
 */
 
 function App() {
@@ -63,7 +67,10 @@ function App() {
             </div>
         </div>
     </div>
-    <img className="w-[375px] h-[520px] rounded-tl-[32px] rounded-tr-[32px]" src="../assets/podprofile_lex.png" />
+    <img className="w-[375px] h-[520px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src="../assets/podprofile_lex.png" />
+    <div className="w-[69px] h-[82px] p-[5px] left-[5px] top-0 absolute justify-center items-center gap-2.5 inline-flex">
+        <div className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
+    </div>
 </div>
 </div>
   )
