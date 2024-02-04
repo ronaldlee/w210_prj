@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { useNavigate } from "react-router-dom";
 
 /**
 App Logo
@@ -37,13 +38,18 @@ Profile Button
 function PodcastMain() {
   const [count, setCount] = useState(0)
 
+  let navigate = useNavigate(); 
+  const routeChange = (path) =>{ 
+    navigate(path);
+  }
+
   return (
 <div className="w-full h-[910px] p-2.5 bg-slate-400 flex-col justify-center items-center gap-2.5 inline-flex">
 <div className="w-[375px] h-[812px] bg-white rounded-[32px] flex-col justify-center items-start gap-1.5 inline-flex">
     <div className="self-stretch grow shrink basis-0 px-6 pt-6 pb-[51px] rounded-tl-[32px] rounded-tr-[32px] flex-col justify-start items-center gap-[21px] inline-flex">
         <div className="h-[69px] flex-col justify-center items-start gap-1 inline-flex">
             <div className="self-stretch h-[47px] pr-[190px] pt-[13px] justify-start items-end gap-[7px] inline-flex">
-                <img className="w-[37px] h-[34px]" src="https://via.placeholder.com/37x34" />
+                <img className="w-[37px] h-[34px]" src="../assets/AppLogo.svg" />
                 <div className="w-[87px] h-[27px] text-black text-xl font-semibold font-['Poppins']">Browse</div>
             </div>
             <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What you want to hear today?</div>
@@ -51,7 +57,7 @@ function PodcastMain() {
         <div className="w-[327px] h-14 relative">
             <div className="w-[327px] h-14 left-0 top-0 absolute bg-neutral-100 rounded-[14px]" />
             <div className="w-[230px] h-[21px] left-[20px] top-[16px] absolute justify-start items-center gap-2 inline-flex">
-                <div className="w-5 h-5 relative" />
+                <div className="w-5 h-5 relative"><img src = "../assets/magnify_glass.svg"/></div>
                 <div className="text-stone-300 text-sm font-normal font-['Poppins']">Search podcast, author, etc...</div>
             </div>
         </div>
@@ -60,13 +66,13 @@ function PodcastMain() {
             <div className="w-[327px] h-[430.07px] left-0 top-[54.93px] absolute flex-col justify-start items-start gap-4 inline-flex">
                 <div className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
-                        <img className="w-[78px] h-[77px] rounded-[10px]" src="https://via.placeholder.com/78x77" />
+                        <img className="w-[78px] h-[77px] rounded-[10px]" src="../assets/podthumb_small_lex.png" />
                         <div className="flex-col justify-start items-start gap-2 inline-flex">
                             <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">Lex Fridman Podcast</div>
                             <div className="text-neutral-400 text-xs font-medium font-['Poppins']">Lex Fridman</div>
                         </div>
                     </div>
-                    <div className="w-8 h-8 relative" />
+                    <div onClick={() => routeChange(`/podcast`)} className="w-8 h-8 relative"><img src="../assets/PlayButtonIcon.svg"/></div>
                 </div>
                 <div className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
@@ -105,14 +111,11 @@ function PodcastMain() {
         <div className="w-[375px] h-[79px] left-0 top-0 absolute bg-white rounded-bl-[32px] rounded-br-[32px] shadow" />
         <div className="w-[315px] h-[43px] left-[30px] top-[12.51px] absolute justify-between items-center inline-flex">
             <div className="flex-col justify-start items-center gap-1 inline-flex">
-                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" />
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex"><img src = "../assets/HomeButtonIcon.svg"/></div>
                 <div className="w-[52px] text-center text-slate-500 text-[10px] font-semibold font-['Poppins']">Home</div>
             </div>
             <div className="flex-col justify-start items-center gap-1 inline-flex">
-                <div className="w-6 h-6 pl-[4.81px] pr-[4.85px] pt-[2.81px] pb-[2.78px] justify-center items-center inline-flex">
-                    <div className="w-[14.34px] h-[18.41px] relative">
-                    </div>
-                </div>
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" ><img src = "../assets/ProfileButtonIcon.svg"/></div>
                 <div className="w-[52px] text-center text-stone-300 text-[10px] font-medium font-['Poppins']">Profile</div>
             </div>
         </div>
