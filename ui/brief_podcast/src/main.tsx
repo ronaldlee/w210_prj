@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
    <Routes>
     <Route exact path="/" element={<PodcastMain/>} />
-    <Route path="/podcast" element={<Podcast/>} />
+    <Route exact path="/podcast/:podcastId" element={<Podcast/>} />
     <Route path="/summary" element={<PodcastSummary/>} />
   </Routes>
   </BrowserRouter>

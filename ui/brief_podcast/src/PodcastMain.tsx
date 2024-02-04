@@ -72,7 +72,7 @@ function PodcastMain() {
                             <div className="text-neutral-400 text-xs font-medium font-['Poppins']">Lex Fridman</div>
                         </div>
                     </div>
-                    <div onClick={() => routeChange(`/podcast`)} className="w-8 h-8 relative"><img src="../assets/PlayButtonIcon.svg"/></div>
+                    <div onClick={() => routeChange(`/podcast/123`)} className="w-8 h-8 relative"><img src="../assets/PlayButtonIcon.svg"/></div>
                 </div>
                 <div className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
