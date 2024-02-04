@@ -108,7 +108,7 @@ function App() {
     <div className="h-[69px] left-[24px] top-[52px] absolute flex-col justify-start items-start gap-1 inline-flex">
         <div className="w-[321px] h-[47px] relative">
             <div className="left-[44px] top-[20px] absolute text-black text-xl font-semibold font-['Poppins']">Browse</div>
-            <img className="w-[37px] h-[34px] left-0 top-[13px] absolute" src="../assets/AppLogo.png" />
+            <img className="w-[37px] h-[34px] left-0 top-[13px] absolute" src="../assets/AppLogo.svg" />
         </div>
         <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What you want to hear today?</div>
     </div>
