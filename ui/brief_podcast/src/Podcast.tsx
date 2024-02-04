@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useParams } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 /**
 Podcast profile pic
@@ -25,6 +26,17 @@ AI icon
 Back button
         <div className="w-[53px] h-[52px] relative" />
         <div className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
+
+Home Button
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" />
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" ><img src = "../assets/HomeButtonIcon.svg"/></div>
+
+Profile Button
+                <div className="w-6 h-6 pl-[4.81px] pr-[4.85px] pt-[2.81px] pb-[2.78px] justify-center items-center inline-flex">
+                    <div className="w-[14.34px] h-[18.41px] relative">
+                    </div>
+                </div>
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" ><img src = "../assets/ProfileButtonIcon.svg"/></div>
 */
 
 const podcast_info = {
@@ -54,6 +66,11 @@ function Podcast() {
   const [count, setCount] = useState(0)
   const { podcastId } = useParams()
 
+  let navigate = useNavigate(); 
+  const routeChange = (path) =>{ 
+    navigate(path);
+  }
+
   return (
 <div className="w-full h-[910px] p-2.5 bg-slate-400 flex-col justify-center items-center gap-2.5 inline-flex">
 <div className="w-[375px] h-[812px] relative bg-white rounded-[32px]">
@@ -61,14 +78,11 @@ function Podcast() {
         <div className="w-[375px] h-[79px] left-0 top-0 absolute bg-white rounded-bl-[32px] rounded-br-[32px] shadow" />
         <div className="w-[315px] h-[43px] left-[30px] top-[12.51px] absolute justify-between items-center inline-flex">
             <div className="flex-col justify-start items-center gap-1 inline-flex">
-                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" />
+                <div onClick={() => routeChange(`/`)} className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex"><img src = "../assets/HomeButtonIcon.svg"/></div>
                 <div className="w-[52px] text-center text-slate-500 text-[10px] font-semibold font-['Poppins']">Home</div>
             </div>
             <div className="flex-col justify-start items-center gap-1 inline-flex">
-                <div className="w-6 h-6 pl-[4.81px] pr-[4.85px] pt-[2.81px] pb-[2.78px] justify-center items-center inline-flex">
-                    <div className="w-[14.34px] h-[18.41px] relative">
-                    </div>
-                </div>
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" ><img src = "../assets/ProfileButtonIcon.svg"/></div>
                 <div className="w-[52px] text-center text-stone-300 text-[10px] font-medium font-['Poppins']">Profile</div>
             </div>
         </div>
@@ -102,7 +116,7 @@ function Podcast() {
         </div>
     </div>
     <div className="w-[69px] h-[82px] p-[5px] left-[5px] top-[12px] absolute opacity-80 justify-center items-center gap-2.5 inline-flex">
-        <div className="w-[53px] h-[52px] relative" />
+        <div onClick={() => routeChange(`/`)} className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
     </div>
 </div>
 </div>
