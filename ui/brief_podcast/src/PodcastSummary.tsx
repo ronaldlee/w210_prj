@@ -29,7 +29,7 @@ Back button
         <div className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
 */
 
-function App() {
+function PodcastSummary() {
   const [count, setCount] = useState(0)
 
   return (
@@ -88,4 +88,4 @@ function App() {
   )
 }
 
-export default App
+export default PodcastSummary

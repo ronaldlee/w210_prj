@@ -34,7 +34,7 @@ Profile Button
                 <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" ><img src = "../assets/ProfileButtonIcon.svg"/></div>
 */
 
-function App() {
+function PodcastMain() {
   const [count, setCount] = useState(0)
 
   return (
@@ -122,4 +122,4 @@ function App() {
   )
 }
 
-export default App
+export default PodcastMain
