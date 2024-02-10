@@ -15,6 +15,7 @@ Install tailwindcss
 https://www.freecodecamp.org/news/how-to-install-tailwindcss-in-react/
 
 npm install -D tailwindcss postcss autoprefixer
+npm install axios
 
 npm i react-router-dom
 

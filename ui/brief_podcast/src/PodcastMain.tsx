@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 /**
 App Logo
@@ -36,36 +37,17 @@ Profile Button
 */
 
 function PodcastMain() {
-  const [count, setCount] = useState(0)
+  const [podcastsInfo, setPodcastsInfo] = useState([])
   const host='http://localhost:5173/'
 
-  const podcasts_info = 
-    [
-        {
-          'podcast_id': 123,
-          'thumbnail': '/assets/podthumb_small_lex.png',
-          'title': 'Lex Fridman Podcast',
-          'org': 'Lex Fridman'
-        },
-        {
-          'podcast_id': 456,
-          'thumbnail': '/assets/podthumb_small_tcrunch.png',
-          'title': 'TC Daily Crunch',
-          'org': 'TechCrunch'
-        },
-        {
-          'podcast_id': 789,
-          'thumbnail': '/assets/podthumb_small_dailytech.png',
-          'title': 'Daily Tech News Show',
-          'org': 'Tom Merrit'
-        },
-        {
-          'podcast_id': 1011,
-          'thumbnail': '/assets/podthumb_small_techsideline.png',
-          'title': 'The Tech Sideline Podcast',
-          'org': 'Techsideline.com'
-        }
-    ]
+  useEffect( () => {
+    async function fetchData() {
+      const {data: podcasts_info} = await axios.get('http://localhost:8080/podcasts_info');
+      setPodcastsInfo(podcasts_info)
+    }
+    fetchData()
+  }, []);
+  //}, [someId]);
 
   let navigate = useNavigate(); 
   const routeChange = (path) =>{ 
@@ -94,7 +76,7 @@ function PodcastMain() {
             <div className="w-[166px] h-[31.55px] left-0 top-0 absolute text-neutral-800 text-lg font-semibold font-['Poppins']">Available Podcast</div>
             <div className="w-[327px] h-[430.07px] left-0 top-[54.93px] absolute flex-col justify-start items-start gap-4 inline-flex">
 
-                {podcasts_info.map(podcast =>
+                {podcastsInfo.map(podcast =>
                 <div className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
                         <img className="w-[78px] h-[77px] rounded-[10px]" src={host+podcast.thumbnail} />
