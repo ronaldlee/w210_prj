@@ -69,6 +69,30 @@ app.get('/podcast/:podcastId', (req, res) => {
   res.send(JSON.stringify(podcast));
 });
 
+app.get('/summary/:podcastId/:episodeId', (req, res) => {
+  podcastId = req.params.podcastId
+  episodeId = req.params.episodeId
+  console.log("call get podcastId:"+podcastId+", episodeId:"+episodeId)
+
+  const summary_info = {
+      '123': {
+          '5': {
+              'english': { 
+                'text': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+                'audio': ""
+              },
+              'spanish': {
+                'text': "",
+                'audio': ""
+              }
+          }
+      }
+    }
+
+  summary = summary_info[podcastId][episodeId]
+
+  res.send(JSON.stringify(summary));
+});
 
 // Listen to the App Engine-specified port, or 8080 otherwise
 const PORT = process.env.PORT || 8080;
