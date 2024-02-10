@@ -38,6 +38,34 @@ Profile Button
 function PodcastMain() {
   const [count, setCount] = useState(0)
 
+  const podcasts_info = 
+    [
+        {
+          'podcast_id': 123,
+          'thumbnail': '../assets/podthumb_small_lex.png',
+          'title': 'Lex Fridman Podcast',
+          'org': 'Lex Fridman'
+        },
+        {
+          'podcast_id': 456,
+          'thumbnail': '../assets/podthumb_small_tcrunch.png',
+          'title': 'TC Daily Crunch',
+          'org': 'TechCrunch'
+        },
+        {
+          'podcast_id': 789,
+          'thumbnail': '../assets/podthumb_small_dailytech.png',
+          'title': 'Daily Tech News Show',
+          'org': 'Tom Merrit'
+        },
+        {
+          'podcast_id': 1011,
+          'thumbnail': '../assets/podthumb_small_techsideline.png',
+          'title': 'The Tech Sideline Podcast',
+          'org': 'Techsideline.com'
+        }
+    ]
+
   let navigate = useNavigate(); 
   const routeChange = (path) =>{ 
     navigate(path);
@@ -64,46 +92,20 @@ function PodcastMain() {
         <div className="self-stretch h-[485px] relative">
             <div className="w-[166px] h-[31.55px] left-0 top-0 absolute text-neutral-800 text-lg font-semibold font-['Poppins']">Available Podcast</div>
             <div className="w-[327px] h-[430.07px] left-0 top-[54.93px] absolute flex-col justify-start items-start gap-4 inline-flex">
+
+                {podcasts_info.map(podcast =>
                 <div className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
-                        <img className="w-[78px] h-[77px] rounded-[10px]" src="../assets/podthumb_small_lex.png" />
+                        <img className="w-[78px] h-[77px] rounded-[10px]" src={podcast.thumbnail} />
                         <div className="flex-col justify-start items-start gap-2 inline-flex">
-                            <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">Lex Fridman Podcast</div>
-                            <div className="text-neutral-400 text-xs font-medium font-['Poppins']">Lex Fridman</div>
+                            <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">{podcast.title}</div>
+                            <div className="text-neutral-400 text-xs font-medium font-['Poppins']">{podcast.org}</div>
                         </div>
                     </div>
-                    <div onClick={() => routeChange(`/podcast/123`)} className="w-8 h-8 relative"><img src="../assets/PlayButtonIcon.svg"/></div>
+                    <div onClick={() => routeChange(`/podcast/${podcast.podcast_id}`)} className="w-8 h-8 relative"><img src="../assets/PlayButtonIcon.svg"/></div>
                 </div>
-                <div className="w-[327px] justify-between items-center inline-flex">
-                    <div className="justify-start items-center gap-3.5 flex">
-                        <img className="w-[78px] h-[83px] rounded-[10px]" src="https://via.placeholder.com/78x83" />
-                        <div className="flex-col justify-start items-start gap-2 inline-flex">
-                            <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">TC Daily Crunch</div>
-                            <div className="text-neutral-400 text-xs font-medium font-['Poppins']">TechCrunch</div>
-                        </div>
-                    </div>
-                    <div className="w-8 h-8 relative" />
-                </div>
-                <div className="w-[327px] justify-between items-center inline-flex">
-                    <div className="justify-start items-center gap-3.5 flex">
-                        <img className="w-[79px] h-[79px] rounded-[10px]" src="https://via.placeholder.com/79x79" />
-                        <div className="flex-col justify-start items-start gap-2 inline-flex">
-                            <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">Daily Tech News Show</div>
-                            <div className="text-neutral-400 text-xs font-medium font-['Poppins']">Tom Merritt</div>
-                        </div>
-                    </div>
-                    <div className="w-8 h-8 relative" />
-                </div>
-                <div className="w-[327px] justify-between items-center inline-flex">
-                    <div className="justify-start items-center gap-3.5 flex">
-                        <img className="w-20 h-20 rounded-[10px]" src="https://via.placeholder.com/80x80" />
-                        <div className="flex-col justify-start items-start gap-2 inline-flex">
-                            <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">The Tech Sideline Podcast</div>
-                            <div className="text-neutral-400 text-xs font-medium font-['Poppins']">Techsideline.com</div>
-                        </div>
-                    </div>
-                    <div className="w-8 h-8 relative" />
-                </div>
+                )}
+
             </div>
         </div>
     </div>
