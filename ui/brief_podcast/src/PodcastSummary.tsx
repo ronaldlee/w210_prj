@@ -34,8 +34,20 @@ Back button
 function PodcastSummary() {
   const [count, setCount] = useState(0)
   const { podcastId, episodeId } = useParams()
-
   const host='http://localhost:5173/'
+
+  const selected_lang = 'english'
+
+  const podcast_summary = {
+    'english': {
+      'text': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+      'audio': ""
+    },
+    'spanish': {
+      'text': "",
+      'audio': ""
+    }
+  }
 
   let navigate = useNavigate();
   const routeChange = (path) =>{
@@ -49,7 +61,7 @@ function PodcastSummary() {
         <div className="w-[375px] h-[79px] left-0 top-0 absolute bg-white rounded-bl-[32px] rounded-br-[32px] shadow" />
         <div className="w-[315px] h-[43px] left-[30px] top-[12.51px] absolute justify-between items-center inline-flex">
             <div className="flex-col justify-start items-center gap-1 inline-flex">
-                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex"><img src = {host+"/assets/HomeButtonIcon.svg"}/></div>
+                <div onClick={() => routeChange(`/`)} className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex"><img src = {host+"/assets/HomeButtonIcon.svg"}/></div>
                 <div className="w-[52px] text-center text-slate-500 text-[10px] font-semibold font-['Poppins']">Home</div>
             </div>
             <div className="flex-col justify-start items-center gap-1 inline-flex">
@@ -60,10 +72,10 @@ function PodcastSummary() {
     </div>
     <div className="w-[375px] h-[727px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]">
         <div className="w-40 h-[29px] left-[48px] top-[200px] absolute text-neutral-800 text-lg font-semibold font-['Poppins']">Summarization<br/></div>
-        <img className="w-[375px] h-40 left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+"../assets/PodcastSummaryProfile.png"}/>
+        <img className="w-[375px] h-40 left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+"/assets/PodcastSummaryProfile.png"}/>
         <div className="w-[356px] left-[7px] top-[168px] absolute text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">#5 - Statistical Learning</div>
         <div className="w-8 pl-0.5 pt-[3px] pb-0.5 left-[7px] top-[196px] absolute bg-neutral-700 rounded-[10px] flex-col justify-center items-center inline-flex">
-            <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"../assets/AiIcon.svg"}/></div> 
+            <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"/assets/AiIcon.svg"}/></div> 
         </div>
         <div className="w-[138px] h-[34px] left-[213px] top-[197px] absolute bg-zinc-300 rounded-[5px]">
             <div className="w-[101px] h-[13px] left-[15px] top-[6px] absolute text-black text-[15px] font-semibold font-['Poppins']">English</div>
@@ -71,7 +83,7 @@ function PodcastSummary() {
         </div>
         <div className="w-[375px] h-[485px] left-0 top-[242px] absolute bg-neutral-600">
             <div className="w-80 h-[319px] left-[22px] top-[20px] absolute flex-col justify-start items-start gap-2 inline-flex">
-                <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</div>
+                <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">{podcast_summary[selected_lang]['text']}</div>
             </div>
             <div className="w-[310.70px] h-[43.92px] left-[22.65px] top-[357.08px] absolute">
                 <div className="w-[34.64px] h-[23.25px] left-0 top-[20.67px] absolute text-white text-xs font-medium font-['Poppins']">23:23</div>
