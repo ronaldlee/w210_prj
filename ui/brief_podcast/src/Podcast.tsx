@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 /**
 Podcast profile pic
@@ -41,31 +42,24 @@ Profile Button
 
 
 function Podcast() {
-  const [count, setCount] = useState(0)
+  const [podcastInfo, setPodcastInfo] = useState(
+    {
+        'profile_pic': '',
+        'episodes': []
+    }
+  )
   const { podcastId } = useParams()
   const host='http://localhost:5173/'
 
-  const podcast_info = {
-    '123': {
-      'profile_pic': '/assets/podprofile_lex.png',
-      'episodes': [
-          {
-            'episode_id': 5,
-            'thumbnail': '/assets/podthumb_small_lex.png',
-            'name': '#5 - Statistical Learning',
-            'length': '1h 40min',
-            'release_date': '22 Feb 2022'
-          },
-          {
-            'episode_id': 4,
-            'thumbnail': '/assets/podthumb_small_lex.png',
-            'name': '#4 - Deep Learning',
-            'length': '1h 23min',
-            'release_date': '3 Jan 2022'
-          }
-      ] 
+  useEffect( () => {
+    async function fetchData() {
+      const {data: podcast_info} = await axios.get('http://localhost:8080/podcast/'+podcastId);
+
+      setPodcastInfo(podcast_info)
+
     }
-  }
+    fetchData()
+  }, [podcastId]);
 
   let navigate = useNavigate(); 
   const routeChange = (path) =>{ 
@@ -89,11 +83,11 @@ function Podcast() {
         </div>
     </div>
     <div className="w-[375px] h-[727px] left-0 top-0 absolute">
-        <img className="w-[375px] h-[393px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+podcast_info[podcastId]['profile_pic']} />
+        <img className="w-[375px] h-[393px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+podcastInfo['profile_pic']} />
         <div className="left-[24px] top-[422px] absolute text-neutral-800 text-lg font-semibold font-['Poppins']">All Episodes</div>
         <div className="left-[24px] top-[478px] absolute flex-col justify-start items-start gap-4 inline-flex">
 
-            {podcast_info[podcastId]['episodes'].map(episode =>
+            {podcastInfo['episodes'].map(episode =>
             <div className="w-[327px] h-[101px] justify-between items-start inline-flex">
                 <div className="w-[327px] h-[101px] justify-start items-start gap-3.5 flex">
                     <img className="w-[78px] h-[77px] rounded-[10px]" src={host+episode.thumbnail} />

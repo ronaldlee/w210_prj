@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 /**
 Pod Summary profile pic
