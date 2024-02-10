@@ -1,0 +1,4 @@
+https://cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service
+
+https://www.geeksforgeeks.org/how-to-allow-cors-in-express/
+npm install cors
