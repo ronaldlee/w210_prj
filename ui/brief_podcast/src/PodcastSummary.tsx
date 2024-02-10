@@ -59,7 +59,7 @@ function PodcastSummary() {
   }
 
   return (
-<div className="w-full h-[910px] p-2.5 bg-slate-400 flex-col justify-center items-center gap-2.5 inline-flex">
+<div className="w-screen h-screen p-2.5 bg-slate-400 flex-col justify-center items-center gap-2.5 inline-flex">
 <div className="w-[375px] h-[812px] relative bg-white rounded-[32px]">
     <div className="w-[375px] h-[79px] left-0 top-[733px] absolute">
         <div className="w-[375px] h-[79px] left-0 top-0 absolute bg-white rounded-bl-[32px] rounded-br-[32px] shadow" />

@@ -55,7 +55,7 @@ function PodcastMain() {
   }
 
   return (
-<div className="w-full h-[910px] p-2.5 bg-slate-400 flex-col justify-center items-center gap-2.5 inline-flex">
+<div className="w-screen h-screen p-2.5 bg-slate-400 flex-col justify-center items-center gap-2.5 inline-flex">
 <div className="w-[375px] h-[812px] bg-white rounded-[32px] flex-col justify-center items-start gap-1.5 inline-flex">
     <div className="self-stretch grow shrink basis-0 px-6 pt-6 pb-[51px] rounded-tl-[32px] rounded-tr-[32px] flex-col justify-start items-center gap-[21px] inline-flex">
         <div className="h-[69px] flex-col justify-center items-start gap-1 inline-flex">
