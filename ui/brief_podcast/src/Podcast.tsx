@@ -106,7 +106,7 @@ function Podcast() {
                 </div>
                 <div className="pl-[13.50px] flex-col justify-center items-start gap-2.5 inline-flex">
                     <div className="w-8 h-8 relative flex-col justify-start items-start flex"><img src='../assets/PlayButtonIcon.svg'/></div>
-                    <div className="self-stretch h-[35px] pl-0.5 pt-[3px] pb-0.5 bg-neutral-700 rounded-[10px] flex-col justify-center items-center inline-flex">
+                    <div onClick={() => routeChange(`/summary/${podcastId}/${episode.episode_id}`)} className="self-stretch h-[35px] pl-0.5 pt-[3px] pb-0.5 bg-neutral-700 rounded-[10px] flex-col justify-center items-center inline-flex">
                         <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src='../assets/AiIcon.svg'/></div>
                     </div>
                 </div>
