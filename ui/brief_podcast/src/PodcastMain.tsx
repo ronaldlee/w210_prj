@@ -37,30 +37,31 @@ Profile Button
 
 function PodcastMain() {
   const [count, setCount] = useState(0)
+  const host='http://localhost:5173/'
 
   const podcasts_info = 
     [
         {
           'podcast_id': 123,
-          'thumbnail': '../assets/podthumb_small_lex.png',
+          'thumbnail': '/assets/podthumb_small_lex.png',
           'title': 'Lex Fridman Podcast',
           'org': 'Lex Fridman'
         },
         {
           'podcast_id': 456,
-          'thumbnail': '../assets/podthumb_small_tcrunch.png',
+          'thumbnail': '/assets/podthumb_small_tcrunch.png',
           'title': 'TC Daily Crunch',
           'org': 'TechCrunch'
         },
         {
           'podcast_id': 789,
-          'thumbnail': '../assets/podthumb_small_dailytech.png',
+          'thumbnail': '/assets/podthumb_small_dailytech.png',
           'title': 'Daily Tech News Show',
           'org': 'Tom Merrit'
         },
         {
           'podcast_id': 1011,
-          'thumbnail': '../assets/podthumb_small_techsideline.png',
+          'thumbnail': '/assets/podthumb_small_techsideline.png',
           'title': 'The Tech Sideline Podcast',
           'org': 'Techsideline.com'
         }
@@ -77,7 +78,7 @@ function PodcastMain() {
     <div className="self-stretch grow shrink basis-0 px-6 pt-6 pb-[51px] rounded-tl-[32px] rounded-tr-[32px] flex-col justify-start items-center gap-[21px] inline-flex">
         <div className="h-[69px] flex-col justify-center items-start gap-1 inline-flex">
             <div className="self-stretch h-[47px] pr-[190px] pt-[13px] justify-start items-end gap-[7px] inline-flex">
-                <img className="w-[37px] h-[34px]" src="../assets/AppLogo.svg" />
+                <img className="w-[37px] h-[34px]" src={host+"/assets/AppLogo.svg"} />
                 <div className="w-[87px] h-[27px] text-black text-xl font-semibold font-['Poppins']">Browse</div>
             </div>
             <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What you want to hear today?</div>
@@ -85,7 +86,7 @@ function PodcastMain() {
         <div className="w-[327px] h-14 relative">
             <div className="w-[327px] h-14 left-0 top-0 absolute bg-neutral-100 rounded-[14px]" />
             <div className="w-[230px] h-[21px] left-[20px] top-[16px] absolute justify-start items-center gap-2 inline-flex">
-                <div className="w-5 h-5 relative"><img src = "../assets/magnify_glass.svg"/></div>
+                <div className="w-5 h-5 relative"><img src = {host+"/assets/magnify_glass.svg"}/></div>
                 <div className="text-stone-300 text-sm font-normal font-['Poppins']">Search podcast, author, etc...</div>
             </div>
         </div>
@@ -96,13 +97,13 @@ function PodcastMain() {
                 {podcasts_info.map(podcast =>
                 <div className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
-                        <img className="w-[78px] h-[77px] rounded-[10px]" src={podcast.thumbnail} />
+                        <img className="w-[78px] h-[77px] rounded-[10px]" src={host+podcast.thumbnail} />
                         <div className="flex-col justify-start items-start gap-2 inline-flex">
                             <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">{podcast.title}</div>
                             <div className="text-neutral-400 text-xs font-medium font-['Poppins']">{podcast.org}</div>
                         </div>
                     </div>
-                    <div onClick={() => routeChange(`/podcast/${podcast.podcast_id}`)} className="w-8 h-8 relative"><img src="../assets/PlayButtonIcon.svg"/></div>
+                    <div onClick={() => routeChange(`/podcast/${podcast.podcast_id}`)} className="w-8 h-8 relative"><img src={host+"/assets/PlayButtonIcon.svg"}/></div>
                 </div>
                 )}
 
@@ -113,11 +114,11 @@ function PodcastMain() {
         <div className="w-[375px] h-[79px] left-0 top-0 absolute bg-white rounded-bl-[32px] rounded-br-[32px] shadow" />
         <div className="w-[315px] h-[43px] left-[30px] top-[12.51px] absolute justify-between items-center inline-flex">
             <div className="flex-col justify-start items-center gap-1 inline-flex">
-                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex"><img src = "../assets/HomeButtonIcon.svg"/></div>
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex"><img src = {host+"/assets/HomeButtonIcon.svg"}/></div>
                 <div className="w-[52px] text-center text-slate-500 text-[10px] font-semibold font-['Poppins']">Home</div>
             </div>
             <div className="flex-col justify-start items-center gap-1 inline-flex">
-                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" ><img src = "../assets/ProfileButtonIcon.svg"/></div>
+                <div className="w-6 h-6 px-[2.50px] py-0.5 justify-center items-center inline-flex" ><img src = {host+"/assets/ProfileButtonIcon.svg"}/></div>
                 <div className="w-[52px] text-center text-stone-300 text-[10px] font-medium font-['Poppins']">Profile</div>
             </div>
         </div>
