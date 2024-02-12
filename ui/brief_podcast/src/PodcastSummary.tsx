@@ -59,6 +59,8 @@ function PodcastSummary() {
   )
 
   const [summary, setSummary] = useState('')
+  const [summaryAudio, setSummaryAudio] = useState('')
+  const [lang, setLang] = useState('english')
 
   const { podcastId, episodeId } = useParams()
   const host='http://localhost:5173/'
@@ -67,7 +69,9 @@ function PodcastSummary() {
     async function fetchData() {
       const {data: summary_data} = await axios.get('http://localhost:8080/summary/'+podcastId+'/'+episodeId);
       setSummaryData(summary_data)
+      setLang('english')
       setSummary(summary_data['english']['text'])
+      setSummaryAudio(summary_data['english']['audio'])
     }
     fetchData()
   }, [podcastId, episodeId]);
@@ -84,7 +88,9 @@ function PodcastSummary() {
   ]
 
   function changeLanguage(event){
+    setLang(event.value)
     setSummary(summaryData[event.value]['text'])
+    setSummaryAudio(summaryData[event.value]['audio'])
   }  
 
   const TranslationSelect = () => (
@@ -121,17 +127,11 @@ function PodcastSummary() {
             <div className="w-80 h-[319px] left-[22px] top-[20px] absolute flex-col justify-start items-start gap-2 inline-flex">
                 <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">{summary}</div>
             </div>
-            <div className="w-[310.70px] h-[43.92px] left-[22.65px] top-[357.08px] absolute">
-                <div className="w-[34.64px] h-[23.25px] left-0 top-[20.67px] absolute text-white text-xs font-medium font-['Poppins']">23:23</div>
-                <div className="w-[43.30px] h-[23.25px] left-[267.39px] top-[20.67px] absolute text-right text-white text-xs font-medium font-['Poppins']">1:20:53</div>
-                <div className="w-[310.70px] h-[15.50px] left-0 top-0 absolute">
-                    <div className="w-[310.70px] h-[5.17px] left-0 top-[5.17px] absolute bg-white bg-opacity-25 rounded-[20px]" />
-                    <div className="w-[110.42px] h-[5.17px] left-0 top-[5.17px] absolute bg-white rounded-[20px]" />
-                    <div className="w-[12.99px] h-[15.50px] left-[103.93px] top-[-0px] absolute bg-white rounded-full" />
-                </div>
-            </div>
             <div className="w-[310px] h-[72px] left-[33px] top-[400px] absolute justify-center items-center inline-flex">
-                <div className="w-[54px] h-[54px] relative"><img src={host+"/assets/PlaySummaryButton.svg"}/></div>
+                <audio id={lang} key={lang} controls>
+                  <source src={summaryAudio}/>
+                  Your browser does not support the audio element.
+                </audio>
             </div>
         </div>
     </div>

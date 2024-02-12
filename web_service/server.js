@@ -3,6 +3,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors())
+app.use(express.static('public'));
 
 app.get('/podcasts_info', (req, res) => {
 
@@ -79,11 +80,11 @@ app.get('/summary/:podcastId/:episodeId', (req, res) => {
           '5': {
               'english': { 
                 'text': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-                'audio': ""
+                'audio': "http://localhost:8080/audio/mit_ai_greg_brockman.mp3"
               },
               'spanish': {
                 'text': "Es importante cuidar al paciente, ser seguido por el paciente, pero sucederá en un momento en el que hay mucho trabajo y dolor. Porque, para llegar al más mínimo detalle, nadie debe practicar ningún tipo de trabajo a menos que obtenga algún beneficio de él. No se enfade con el dolor en la reprimenda en el placer quiere ser un pelo del dolor con la esperanza de que no haya cría. A menos que estén cegados por la lujuria, no salen adelante, son culpables los que cumplen con su deber.",
-                'audio': ""
+                'audio': "http://localhost:8080/audio/spanish/12-cosas-interesantes-sobre-Nicaragua.mp3"
               }
           }
       }
