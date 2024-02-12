@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 /**
 Pod Summary profile pic
@@ -30,25 +31,43 @@ Play summary button
 Back button
         <div className="w-[53px] h-[52px] relative" />
         <div className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
+
+<!--
+            <div className="w-[101px] h-[13px] left-[15px] top-[6px] absolute text-black text-[15px] font-semibold font-['Poppins']">English</div>
+            <div className="w-5 h-5 left-[109px] top-[8px] absolute"><img src={host+"/assets/LanguageDropdownArrow.svg"}/></div>
+-->
 */
 
+
+
 function PodcastSummary() {
-  const [summary, setSummary] = useState(
+  const [summaryData, setSummaryData] = useState(
     {
       'english': {
+        'text': "",
+        'audio': ""
+      },
+      'spanish': {
+        'text': "",
+        'audio': ""
+      },
+      'chinese': {
         'text': "",
         'audio': ""
       }
     }
   )
+
+  const [summary, setSummary] = useState('')
+
   const { podcastId, episodeId } = useParams()
   const host='http://localhost:5173/'
-  const selected_lang = 'english'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: summary} = await axios.get('http://localhost:8080/summary/'+podcastId+'/'+episodeId);
-      setSummary(summary)
+      const {data: summary_data} = await axios.get('http://localhost:8080/summary/'+podcastId+'/'+episodeId);
+      setSummaryData(summary_data)
+      setSummary(summary_data['english']['text'])
     }
     fetchData()
   }, [podcastId, episodeId]);
@@ -56,6 +75,22 @@ function PodcastSummary() {
   let navigate = useNavigate();
   const routeChange = (path) =>{
     navigate(path);
+  }
+
+  function TranslationDropdown() {
+    return (
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Translate
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={() => setSummary(summaryData['english']['text'])} >English</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSummary(summaryData['spanish']['text'])} >Spanish</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSummary(summaryData['chinese']['text'])} >Chinese</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+    );
   }
 
   return (
@@ -82,12 +117,11 @@ function PodcastSummary() {
             <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"/assets/AiIcon.svg"}/></div> 
         </div>
         <div className="w-[138px] h-[34px] left-[213px] top-[197px] absolute bg-zinc-300 rounded-[5px]">
-            <div className="w-[101px] h-[13px] left-[15px] top-[6px] absolute text-black text-[15px] font-semibold font-['Poppins']">English</div>
-            <div className="w-5 h-5 left-[109px] top-[8px] absolute"><img src={host+"/assets/LanguageDropdownArrow.svg"}/></div>
+            {TranslationDropdown()}
         </div>
         <div className="w-[375px] h-[485px] left-0 top-[242px] absolute bg-neutral-600">
             <div className="w-80 h-[319px] left-[22px] top-[20px] absolute flex-col justify-start items-start gap-2 inline-flex">
-                <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">{summary[selected_lang]['text']}</div>
+                <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">{summary}</div>
             </div>
             <div className="w-[310.70px] h-[43.92px] left-[22.65px] top-[357.08px] absolute">
                 <div className="w-[34.64px] h-[23.25px] left-0 top-[20.67px] absolute text-white text-xs font-medium font-['Poppins']">23:23</div>

@@ -18,4 +18,7 @@ npm install -D tailwindcss postcss autoprefixer
 npm install axios
 
 npm i react-router-dom
+#npm i react-dropdown
+
+npm i react-bootstrap
 

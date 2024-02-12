@@ -82,7 +82,7 @@ app.get('/summary/:podcastId/:episodeId', (req, res) => {
                 'audio': ""
               },
               'spanish': {
-                'text': "",
+                'text': "Es importante cuidar al paciente, ser seguido por el paciente, pero sucederá en un momento en el que hay mucho trabajo y dolor. Porque, para llegar al más mínimo detalle, nadie debe practicar ningún tipo de trabajo a menos que obtenga algún beneficio de él. No se enfade con el dolor en la reprimenda en el placer quiere ser un pelo del dolor con la esperanza de que no haya cría. A menos que estén cegados por la lujuria, no salen adelante, son culpables los que cumplen con su deber.",
                 'audio': ""
               }
           }
