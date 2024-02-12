@@ -94,7 +94,7 @@ function PodcastSummary() {
   }  
 
   const TranslationSelect = () => (
-    <Select value='english' options={translation_options} onChange={changeLanguage}/>
+    <Select options={translation_options} onChange={changeLanguage}/>
   )
 
   return (
@@ -128,10 +128,7 @@ function PodcastSummary() {
                 <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">{summary}</div>
             </div>
             <div className="w-[310px] h-[72px] left-[33px] top-[400px] absolute justify-center items-center inline-flex">
-                <audio id={lang} key={lang} controls>
-                  <source src={summaryAudio}/>
-                  Your browser does not support the audio element.
-                </audio>
+                <audio controls src={summaryAudio}/>
             </div>
         </div>
     </div>
