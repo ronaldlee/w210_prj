@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
-import Dropdown from 'react-bootstrap/Dropdown'
+import Select from 'react-select'
 
 /**
 Pod Summary profile pic
@@ -77,21 +77,19 @@ function PodcastSummary() {
     navigate(path);
   }
 
-  function TranslationDropdown() {
-    return (
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Translate
-        </Dropdown.Toggle>
+  const translation_options = [
+    { value: 'english', label: 'English' },
+    { value: 'spanish', label: 'Spanish' },
+    { value: 'chinese', label: 'Chinese' }
+  ]
 
-        <Dropdown.Menu>
-          <Dropdown.Item onClick={() => setSummary(summaryData['english']['text'])} >English</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSummary(summaryData['spanish']['text'])} >Spanish</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSummary(summaryData['chinese']['text'])} >Chinese</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    );
-  }
+  function changeLanguage(event){
+    setSummary(summaryData[event.value]['text'])
+  }  
+
+  const TranslationSelect = () => (
+    <Select value='english' options={translation_options} onChange={changeLanguage}/>
+  )
 
   return (
 <div className="w-screen h-screen p-2.5 bg-slate-400 flex-col justify-center items-center gap-2.5 inline-flex">
@@ -117,7 +115,7 @@ function PodcastSummary() {
             <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"/assets/AiIcon.svg"}/></div> 
         </div>
         <div className="w-[138px] h-[34px] left-[213px] top-[197px] absolute bg-zinc-300 rounded-[5px]">
-            {TranslationDropdown()}
+            {TranslationSelect()}
         </div>
         <div className="w-[375px] h-[485px] left-0 top-[242px] absolute bg-neutral-600">
             <div className="w-80 h-[319px] left-[22px] top-[20px] absolute flex-col justify-start items-start gap-2 inline-flex">
