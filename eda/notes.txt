@@ -1,0 +1,18 @@
+conda create -n w210_podcast python=3.9
+
+conda install anaconda::jupyter
+conda install conda-forge::langchain
+conda install -c conda-forge notebook
+conda install anaconda::pandas
+
+conda install zeroae::webvtt-py
+
+conda install conda-forge::matplotlib
+conda install conda-forge::spacy
+conda install anaconda::gensim
+conda install anaconda::nltk
+
+conda install conda-forge::wordcloud
+
+conda install conda-forge::bertopic
+conda install conda-forge::youtube-search-python
