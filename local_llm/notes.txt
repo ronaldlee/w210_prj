@@ -1,0 +1,37 @@
+## Ollama vs GPT4all
+According to this video on Ollama vs GPT4all,
+it seems ollama is more user friendly.
+https://www.youtube.com/watch?v=0K2hzZMK6Ds
+
+## Try ollama first.
+https://github.com/ollama/ollama
+
+Installation:
+curl -fsSL https://ollama.com/install.sh | sh
+
+## Best open source llms (with fine-tuning)
+https://www.width.ai/post/the-best-open-source-llms
+
+OpenChat and Zephyr perform best, needs fine-tuning
+https://huggingface.co/HuggingFaceH4/zephyr-7b-beta
+
+## OpenChat
+https://huggingface.co/openchat/openchat_3.5
+https://github.com/imoneoi/openchat
+
+conda create -y --name openchat python=3.11
+
+## Ollama with Langchain
+https://python.langchain.com/docs/integrations/chat/ollama
+
+=======
+conda create -n w210_podcast_ollama python=3.11
+
+# works!
+https://pytorch.org/get-started/locally/
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+conda install -c conda-forge notebook=6.3.0
+conda install conda-forge::transformers
+
+

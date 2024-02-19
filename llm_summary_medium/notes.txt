@@ -1,3 +1,4 @@
 conda install conda-forge::langchain
 conda install conda-forge::openai
+conda install anaconda::scipy
 conda install conda-forge::tiktoken
