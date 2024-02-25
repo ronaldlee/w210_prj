@@ -18,5 +18,29 @@ Difference between Abstractive and Extractive summarization:
 Extractive summarization is the strategy of concatenating extracts taken from a corpus into a summary, while abstractive summariza- tion involves paraphrasing the corpus using novel sentences.
 
  manual evaluation?
+=====
+How to Create Well-Crafted Podcast summaries ion minutes:
+https://www.notta.ai/en/blog/podcast-summary#:~:text=Always%20make%20sure%20the%20summary,well%20you%20promote%20your%20podcast.
+
+=========
+
+Summary content:
+Concise
+
+Accurate
+
+Complete: cover all the main points, hightlights.
+
+Catchy - makes ppl want to listen the full version to learn more details.
+  -- Mention all the human names
+  -- Mention all the tech terms
+  -- How the summary is written that makes ppl want to learn more, reveal enough info to get some ideas but not everything.
+
+Language: 
+Well written
+ - Fluid
+ - Perfect grammar
+ - nice structure (?)
+
 
 
