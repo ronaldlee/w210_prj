@@ -1,0 +1,22 @@
+What is a good summary?
+Type of summary:
+Abstractive
+- https://ieeexplore.ieee.org/document/7054161
+ - "Abstractive summarization is the technique of generating a summary of a text from its main ideas, not by copying verbatim most salient sentences from text."
+- https://blog.paperspace.com/extractive-and-abstractive-summarization-techniques/
+  - An abstractive summarizer presents the material in a logical, well-organized, and grammatically sound form.
+
+Extractive
+- https://www.sciencedirect.com/topics/computer-science/extractive-summarization#:~:text=extractive%20or%20abstractive.-,Extractive%20summarization%20aims%20at%20identifying%20the%20salient%20information%20that%20is,created%20using%20natural%20language%20processing.
+  - Extractive summarization aims at identifying the salient information that is then extracted and grouped together to form a concise summary. Abstractive summary generation rewrites the entire document by building internal semantic representation, and then a summary is created using natural language processing.
+
+- https://blog.paperspace.com/extractive-and-abstractive-summarization-techniques/
+  - The process of extractive summarizing involves picking the most relevant sentences from an article and systematically organizing them. The sentences making up the summary are taken verbatim from the source material.
+  = Topic representation -> intermediate representation
+
+Difference between Abstractive and Extractive summarization:
+Extractive summarization is the strategy of concatenating extracts taken from a corpus into a summary, while abstractive summariza- tion involves paraphrasing the corpus using novel sentences.
+
+ manual evaluation?
+
+
