@@ -39,11 +39,11 @@ Profile Button
 
 function PodcastMain() {
   const [podcastsInfo, setPodcastsInfo] = useState([])
-  const host='http://localhost:5173/'
+  const host='http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:5173/'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: podcasts_info} = await axios.get('http://localhost:8080/podcasts_info');
+      const {data: podcasts_info} = await axios.get('http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:8080/podcasts_info');
       setPodcastsInfo(podcasts_info)
     }
     fetchData()
@@ -74,7 +74,7 @@ function PodcastMain() {
             </div>
         </div>
         <div className="self-stretch h-[485px] relative">
-            <div className="w-[166px] h-[31.55px] left-0 top-0 absolute text-neutral-800 text-lg font-semibold font-['Poppins']">Available Podcast</div>
+            <div className="w-[166px] h-[31.55px] left-0 top-0 absolute text-neutral-800 text-lg font-semibold font-['Poppins']">Available Podcasts</div>
             <div className="w-[327px] h-[430.07px] left-0 top-[54.93px] absolute flex-col justify-start items-start gap-4 inline-flex">
 
                 {podcastsInfo.map(podcast =>
