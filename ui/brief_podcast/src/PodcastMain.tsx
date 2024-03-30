@@ -39,11 +39,11 @@ Profile Button
 
 function PodcastMain() {
   const [podcastsInfo, setPodcastsInfo] = useState([])
-  const host='http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:5173/'
+  const host='http://ec2-52-12-186-21.us-west-2.compute.amazonaws.com/'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: podcasts_info} = await axios.get('http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:8080/podcasts_info');
+      const {data: podcasts_info} = await axios.get(host+'service/podcasts_info');
       setPodcastsInfo(podcasts_info)
     }
     fetchData()

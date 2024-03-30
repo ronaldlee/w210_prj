@@ -11,3 +11,23 @@ sudo systemctl stop nginx
 
 sudo systemctl reload nginx
 sudo systemctl restart nginx
+
+## setup reverse proxy
+
+1) modify nginx config file
+sudo vi /etc/nginx/sites-available/default
+
+Replace the existing 'location /' with these 2:
+
+....
+location /service/ {
+  proxy_pass http://localhost:8080;
+}
+
+location / {
+  proxy_pass http://localhost:5173/;
+}
+....
+
+2) Reload the nginx config:
+sudo systemctl reload nginx
