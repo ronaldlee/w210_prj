@@ -110,7 +110,7 @@ app.get('/summary/:podcastId/:episodeId', async (req, res) => {
       },
       'spanish': {
         'text': spanishText,
-        'audio': `http://localhost:8080/audio/spanish/ep${episodeId}.mp3`
+        'audio': `http://localhost:8080/audio/spanish/ep${episodeId}-spanish.mp3`
       }
     };
 
