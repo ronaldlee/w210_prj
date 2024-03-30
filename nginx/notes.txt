@@ -1,0 +1,13 @@
+## install nginx
+
+sudo apt update
+sudo apt install nginx
+
+## start/stop nginx
+https://phoenixnap.com/kb/nginx-start-stop-restart
+
+sudo systemctl start nginx
+sudo systemctl stop nginx
+
+sudo systemctl reload nginx
+sudo systemctl restart nginx
