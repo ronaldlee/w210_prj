@@ -57,11 +57,11 @@ app.get('/podcast/:podcastId', (req, res) => {
               'release_date': '22 Feb 2022'
             },
             {
-              'episode_id': 4,
+              'episode_id': 22,
               'thumbnail': '/assets/podthumb_small_lex.png',
-              'name': '#4 - Deep Learning',
+              'name': '#22 - Tensorflow',
               'length': '1h 23min',
-              'release_date': '3 Jan 2022'
+              'release_date': '3 Jun 2019'
             }
         ]
       }
