@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+const fs = require('fs');
 const cors = require('cors');
 const app = express();
 
@@ -48,9 +50,9 @@ app.get('/podcast/:podcastId', (req, res) => {
         'profile_pic': '/assets/podprofile_lex.png',
         'episodes': [
             {
-              'episode_id': 5,
+              'episode_id': 12,
               'thumbnail': '/assets/podthumb_small_lex.png',
-              'name': '#5 - Statistical Learning',
+              'name': '#12 - Poker and Game Theory',
               'length': '1h 40min',
               'release_date': '22 Feb 2022'
             },
@@ -71,28 +73,30 @@ app.get('/podcast/:podcastId', (req, res) => {
 });
 
 app.get('/summary/:podcastId/:episodeId', (req, res) => {
-  podcastId = req.params.podcastId
-  episodeId = req.params.episodeId
-  console.log("call get podcastId:"+podcastId+", episodeId:"+episodeId)
+  const { podcastId, episodeId } = req.params;
+  console.log(`call get podcastId: ${podcastId}, episodeId: ${episodeId}`);
 
-  const summary_info = {
-      '123': {
-          '5': {
-              'english': { 
-                'text': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-                'audio': "http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:8080/audio/mit_ai_greg_brockman.mp3"
-              },
-              'spanish': {
-                'text': "Es importante cuidar al paciente, ser seguido por el paciente, pero sucederá en un momento en el que hay mucho trabajo y dolor. Porque, para llegar al más mínimo detalle, nadie debe practicar ningún tipo de trabajo a menos que obtenga algún beneficio de él. No se enfade con el dolor en la reprimenda en el placer quiere ser un pelo del dolor con la esperanza de que no haya cría. A menos que estén cegados por la lujuria, no salen adelante, son culpables los que cumplen con su deber.",
-                'audio': "http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:8080/audio/spanish/12-cosas-interesantes-sobre-Nicaragua.mp3"
-              }
-          }
-      }
+  const englishTextFilePath = path.join(__dirname, 'public', 'text', 'english', `ep${episodeId}.txt`);
+
+  if (!fs.existsSync(englishTextFilePath)) {
+    return res.status(404).send("Text file not found");
+  }
+
+  fs.readFile(englishTextFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error("Failed to read file:", err);
+      return res.status(500).send("Error reading text file");
     }
 
-  summary = summary_info[podcastId][episodeId]
+    const summary = {
+      'english': {
+        'text': data,
+        'audio': `http://localhost:8080/audio/english/ep${episodeId}.mp3`
+      }
+    };
 
-  res.send(JSON.stringify(summary));
+    res.json(summary); // This sets the correct Content-Type header for JSON
+  });
 });
 
 // Listen to the App Engine-specified port, or 8080 otherwise
