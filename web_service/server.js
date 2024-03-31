@@ -19,6 +19,12 @@ app.get('/service/podcasts_info', (req, res) => {
           'org': 'Lex Fridman'
         },
         {
+          'podcast_id': 234,
+          'thumbnail': '/assets/podthumb_small_deb.png',
+          'title': 'Technically Human',
+          'org': 'Deb Donig'
+        },
+        {
           'podcast_id': 456,
           'thumbnail': '/assets/podthumb_small_tcrunch.png',
           'title': 'TC Daily Crunch',
@@ -79,6 +85,18 @@ app.get('/service/podcast/:podcastId', (req, res) => {
               'release_date': '8 May 2020'
             }
         ]
+      },
+      '234': {
+        'profile_pic': '/assets/podprofile_deb.png',
+        'episodes': [
+            {
+              'episode_id': 1,
+              'thumbnail': '/assets/podthumb_small_deb.png',
+              'name': "Taking the Temperature of AI: Measuring AI's Environmental Impact",
+              'length': '1h 5min',
+              'release_date': '2 Feb 2024'
+            },
+        ]
       }
     }
 
@@ -104,17 +122,31 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
 
     // Construct the summary object with both languages
     const summary = {
-      'english': {
-        'text': englishText,
-        'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/english/ep${episodeId}.mp3`
+      '123': {
+          'profile_pic': '/assets/podsummary_lex.png',
+          'english': {
+            'text': englishText,
+            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+          },
+          'spanish': {
+            'text': spanishText,
+            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+          }
       },
-      'spanish': {
-        'text': spanishText,
-        'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/spanish/ep${episodeId}-spanish.mp3`
+      '234': {
+          'profile_pic': '/assets/podsummary_deb.png',
+          'english': {
+            'text': englishText,
+            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+          },
+          'spanish': {
+            'text': spanishText,
+            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+          }
       }
     };
 
-    res.json(summary);
+    res.json(summary[podcastId]);
   } catch (error) {
     console.error("Failed to read file:", error);
     res.status(500).send("Error reading text file");

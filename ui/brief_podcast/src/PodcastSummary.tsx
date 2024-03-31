@@ -59,6 +59,7 @@ function PodcastSummary() {
     }
   )
 
+  const [profilePic, setProfilePic] = useState('')
   const [summary, setSummary] = useState('')
   const [summaryAudio, setSummaryAudio] = useState('')
   const [lang, setLang] = useState('english')
@@ -74,6 +75,7 @@ function PodcastSummary() {
       setLang('english')
       setSummary(summary_data['english']['text'])
       setSummaryAudio(summary_data['english']['audio'])
+      setProfilePic(summary_data['profile_pic'])
     }
     fetchData()
   }, [podcastId, episodeId]);
@@ -117,7 +119,7 @@ function PodcastSummary() {
     </div>
     <div className="w-[375px] h-[727px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]">
         <div className="w-40 h-[29px] left-[48px] top-[200px] absolute text-neutral-800 text-lg font-semibold font-['Poppins']">Summarization<br/></div>
-        <img className="w-[375px] h-40 left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+"/assets/PodcastSummaryProfile.png"}/>
+        <img className="w-[375px] h-40 left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+profilePic}/>
         <div className="w-[356px] left-[7px] top-[168px] absolute text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">#12 - Poker and Game Theory</div>
         <div className="w-8 pl-0.5 pt-[3px] pb-0.5 left-[7px] top-[196px] absolute bg-neutral-700 rounded-[10px] flex-col justify-center items-center inline-flex">
             <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"/assets/AiIcon.svg"}/></div> 
