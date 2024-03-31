@@ -123,30 +123,72 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
     // Construct the summary object with both languages
     const summary = {
       '123': {
-          'profile_pic': '/assets/podsummary_lex.png',
-          'english': {
-            'text': englishText,
-            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+          '12': {    
+              'name': '#12 - Poker and Game Theory',
+              'profile_pic': '/assets/podsummary_lex.png',
+              'english': {
+                'text': englishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+              },
+              'spanish': {
+                'text': spanishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+              }
           },
-          'spanish': {
-            'text': spanishText,
-            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
-          }
+          '22': {    
+              'name': '#22 - Tensorflow',
+              'profile_pic': '/assets/podsummary_lex.png',
+              'english': {
+                'text': englishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+              },
+              'spanish': {
+                'text': spanishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+              }
+          },
+          '23': {    
+              'name': '#23 - Adobe Research',
+              'profile_pic': '/assets/podsummary_lex.png',
+              'english': {
+                'text': englishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+              },
+              'spanish': {
+                'text': spanishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+              }
+          },
+          '94': {    
+              'name': '#94 - Deep Learning',
+              'profile_pic': '/assets/podsummary_lex.png',
+              'english': {
+                'text': englishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+              },
+              'spanish': {
+                'text': spanishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+              }
+          },
       },
       '234': {
-          'profile_pic': '/assets/podsummary_deb.png',
-          'english': {
-            'text': englishText,
-            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
-          },
-          'spanish': {
-            'text': spanishText,
-            'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+          '1': {
+              'name': "Taking the Temperature of AI: Measuring AI's Environmental Impact",
+              'profile_pic': '/assets/podsummary_deb.png',
+              'english': {
+                'text': englishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+              },
+              'spanish': {
+                'text': spanishText,
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+              }
           }
       }
     };
 
-    res.json(summary[podcastId]);
+    res.json(summary[podcastId][episodeId]);
   } catch (error) {
     console.error("Failed to read file:", error);
     res.status(500).send("Error reading text file");
