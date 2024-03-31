@@ -50,7 +50,7 @@ function Podcast() {
     }
   )
   const { podcastId } = useParams()
-  const host='https://ec2-34-212-30-186.us-west-2.compute.amazonaws.com/'
+  const host='ec2-34-212-30-186.us-west-2.compute.amazonaws.com/'
 
   useEffect( () => {
     async function fetchData() {
