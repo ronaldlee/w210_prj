@@ -64,7 +64,7 @@ function PodcastSummary() {
   const [lang, setLang] = useState('english')
 
   const { podcastId, episodeId } = useParams()
-  const host='ec2-34-212-30-186.us-west-2.compute.amazonaws.com/'
+  const host='/'
 
   useEffect( () => {
     async function fetchData() {
