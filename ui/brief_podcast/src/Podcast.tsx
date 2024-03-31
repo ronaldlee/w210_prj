@@ -87,7 +87,7 @@ function Podcast() {
     <div className="w-[375px] h-[727px] left-0 top-0 absolute">
         <img className="w-[375px] h-[393px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+podcastInfo['profile_pic']} />
         <div className="left-[24px] top-[422px] absolute text-neutral-800 text-lg font-semibold font-['Poppins']">All Episodes</div>
-        <div className="left-[24px] top-[478px] absolute flex-col justify-start items-start gap-4 inline-flex">
+        <div className="left-[24px] top-[478px] h-[250px] absolute overflow-y-auto flex flex-col justify-start items-start">
 
             {podcastInfo['episodes'].map(episode =>
             <div className="w-[327px] h-[101px] justify-between items-start inline-flex">
