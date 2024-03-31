@@ -8,7 +8,7 @@ const app = express();
 app.use(cors())
 app.use(express.static('public'));
 
-app.get('/podcasts_info', (req, res) => {
+app.get('/service/podcasts_info', (req, res) => {
 
   const podcasts_info =
     [
@@ -42,7 +42,7 @@ app.get('/podcasts_info', (req, res) => {
 });
 
 
-app.get('/podcast/:podcastId', (req, res) => {
+app.get('/service/podcast/:podcastId', (req, res) => {
   podcastId = req.params.podcastId
   console.log("call get podcast: id:"+podcastId)
 
@@ -87,7 +87,7 @@ app.get('/podcast/:podcastId', (req, res) => {
   res.send(JSON.stringify(podcast));
 });
 
-app.get('/summary/:podcastId/:episodeId', async (req, res) => {
+app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
   const { podcastId, episodeId } = req.params;
   console.log(`call get podcastId: ${podcastId}, episodeId: ${episodeId}`);
 
