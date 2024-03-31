@@ -111,8 +111,8 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
 
   try {
     // Construct file paths for both English and Spanish text files
-    const englishTextFilePath = path.join(__dirname, 'public', 'text', 'english', `ep${episodeId}.txt`);
-    const spanishTextFilePath = path.join(__dirname, 'public', 'text', 'spanish', `ep${episodeId}.txt`);
+    const englishTextFilePath = path.join(__dirname, 'public', 'text', podcastId, 'english', `ep${episodeId}.txt`);
+    const spanishTextFilePath = path.join(__dirname, 'public', 'text', podcastId, 'spanish', `ep${episodeId}.txt`);
     
     // Read both files asynchronously
     const [englishText, spanishText] = await Promise.all([
