@@ -89,8 +89,7 @@ function PodcastSummary() {
 
   const translation_options = [
     { value: 'english', label: 'English' },
-    { value: 'spanish', label: 'Spanish' },
-    { value: 'chinese', label: 'Chinese' }
+    { value: 'spanish', label: 'Spanish' }
   ]
 
   function changeLanguage(event){
