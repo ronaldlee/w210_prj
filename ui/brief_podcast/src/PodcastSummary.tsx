@@ -128,7 +128,7 @@ function PodcastSummary() {
             {TranslationSelect()}
         </div>
         <div className="w-[375px] h-[485px] left-0 top-[242px] absolute bg-neutral-600">
-            <div className="w-80 h-[319px] left-[22px] top-[20px] absolute flex-col justify-start items-start gap-2 inline-flex">
+            <div className="absolute top-[20px] left-[22px] w-80 h-[370px] overflow-y-auto flex flex-col items-start justify-start">
                 <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">{summary}</div>
             </div>
             <div className="w-[310px] h-[72px] left-[33px] top-[400px] absolute justify-center items-center inline-flex">
