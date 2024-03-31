@@ -64,11 +64,12 @@ function PodcastSummary() {
   const [lang, setLang] = useState('english')
 
   const { podcastId, episodeId } = useParams()
-  const host='/'
+  const host='http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com/'
+  const serverHost='/'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: summary_data} = await axios.get(host +'service/summary/'+podcastId+'/'+episodeId);
+      const {data: summary_data} = await axios.get(serverHost +'service/summary/'+podcastId+'/'+episodeId);
       setSummaryData(summary_data)
       setLang('english')
       setSummary(summary_data['english']['text'])
