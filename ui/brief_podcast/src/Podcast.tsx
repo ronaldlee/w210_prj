@@ -51,7 +51,7 @@ function Podcast() {
   )
   const { podcastId } = useParams()
   const host='http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com/'
-
+  const serverHost='/'
   useEffect( () => {
     async function fetchData() {
       const {data: podcast_info} = await axios.get(serverHost+'service/podcast/'+podcastId);
