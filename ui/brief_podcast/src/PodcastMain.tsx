@@ -39,7 +39,7 @@ Profile Button
 
 function PodcastMain() {
   const [podcastsInfo, setPodcastsInfo] = useState([])
-  const host='http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:5173/'
+  const host='http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:5137/'
 
   useEffect( () => {
     async function fetchData() {
