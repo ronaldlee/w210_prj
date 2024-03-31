@@ -106,11 +106,11 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
     const summary = {
       'english': {
         'text': englishText,
-        'audio': `http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com/audio/english/ep${episodeId}.mp3`
+        'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/english/ep${episodeId}.mp3`
       },
       'spanish': {
         'text': spanishText,
-        'audio': `http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com/audio/spanish/ep${episodeId}-spanish.mp3`
+        'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/spanish/ep${episodeId}-spanish.mp3`
       }
     };
 
