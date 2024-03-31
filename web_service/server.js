@@ -61,28 +61,32 @@ app.get('/service/podcast/:podcastId', (req, res) => {
               'thumbnail': '/assets/podthumb_small_lex.png',
               'name': '#12 - Poker and Game Theory',
               'length': '1h 6min',
-              'release_date': '28 Dec 2018'
+              'release_date': '28 Dec 2018',
+              'podcast_url': 'https://www.youtube.com/watch?v=b7bStIQovcY'
             },
             {
               'episode_id': 22,
               'thumbnail': '/assets/podthumb_small_lex.png',
               'name': '#22 - Tensorflow',
               'length': '1h 10min',
-              'release_date': '3 Jun 2019'
+              'release_date': '3 Jun 2019',
+              'podcast_url': 'https://www.youtube.com/watch?v=NERNE4UThHU'
             },
-            // {
-            //   'episode_id': 23,
-            //   'thumbnail': '/assets/podthumb_small_lex.png',
-            //   'name': '#23 - Adobe Research',
-            //   'length': '1h 9min',
-            //   'release_date': '10 Jun 2019'
-            // },
+            {
+              'episode_id': 23,
+              'thumbnail': '/assets/podthumb_small_lex.png',
+              'name': '#23 - Adobe Research',
+              'length': '1h 9min',
+              'release_date': '10 Jun 2019',
+              'podcast_url': 'https://www.youtube.com/watch?v=q0mokx-iiws'
+            },
             {
               'episode_id': 94,
               'thumbnail': '/assets/podthumb_small_lex.png',
               'name': '#94 - Deep Learning',
               'length': '1h 37min',
-              'release_date': '8 May 2020'
+              'release_date': '8 May 2020',
+              'podcast_url': 'https://www.youtube.com/watch?v=13CZPWmke6A'
             }
         ]
       },
@@ -94,7 +98,8 @@ app.get('/service/podcast/:podcastId', (req, res) => {
               'thumbnail': '/assets/podthumb_small_deb.png',
               'name': "Taking the Temperature of AI: Measuring AI's Environmental Impact",
               'length': '1h 5min',
-              'release_date': '2 Feb 2024'
+              'release_date': '2 Feb 2024',
+              'podcast_url': 'https://dmdonig.podbean.com/e/kneese/'
             },
         ]
       }

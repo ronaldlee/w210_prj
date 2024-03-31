@@ -96,13 +96,10 @@ function Podcast() {
                     <div className="w-[189px] h-[99px] flex-col justify-start items-start gap-2 inline-flex">
                         <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">{episode.name}</div>
                         <div className="text-neutral-400 text-xs font-medium font-['Poppins']">{episode.length} • {episode.release_date}</div>
-                        <div className="pr-[11px] pt-[0.50px] pb-[11.50px] justify-start items-center inline-flex">
-                            <img className="w-[178px] h-2.5 rounded-[5px]" src="https://via.placeholder.com/178x10" />
-                        </div>
                     </div>
                 </div>
                 <div className="pl-[13.50px] flex-col justify-center items-start gap-2.5 inline-flex">
-                    <div className="w-8 h-8 relative flex-col justify-start items-start flex"><img src={host+"/assets/PlayButtonIcon.svg"}/></div>
+                    <div onClick={() => window.open(`${episode.podcast_url}`, '_blank')} className="w-8 h-8 relative flex-col justify-start items-start flex"><img src={host+"/assets/PlayButtonIcon.svg"}/></div>
                     <div onClick={() => routeChange(`/summary/${podcastId}/${episode.episode_id}`)} className="self-stretch h-[35px] pl-0.5 pt-[3px] pb-0.5 bg-neutral-700 rounded-[10px] flex-col justify-center items-center inline-flex">
                         <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"/assets/AiIcon.svg"}/></div>
                     </div>
