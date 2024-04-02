@@ -79,7 +79,7 @@ function PodcastMain() {
             <div className="w-[327px] h-[430.07px] left-0 top-[54.93px] absolute flex-col justify-start items-start gap-4 inline-flex">
 
                 {podcastsInfo.map(podcast =>
-                <div className="w-[327px] justify-between items-center inline-flex">
+                <div onClick={() => routeChange(`/podcast/${podcast.podcast_id}`)} className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
                         <img className="w-[78px] h-[77px] rounded-[10px]" src={host+podcast.thumbnail} />
                         <div className="flex-col justify-start items-start gap-2 inline-flex">
@@ -87,7 +87,7 @@ function PodcastMain() {
                             <div className="text-neutral-400 text-xs font-medium font-['Poppins']">{podcast.org}</div>
                         </div>
                     </div>
-                    <div onClick={() => routeChange(`/podcast/${podcast.podcast_id}`)} className="w-8 h-8 relative"><img src={host+"/assets/PlayButtonIcon.svg"}/></div>
+                    <div className="w-8 h-8 relative"><img src={host+"/assets/chevron.svg"}/></div>
                 </div>
                 )}
 
