@@ -133,7 +133,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               'profile_pic': '/assets/podsummary_lex.png',
               'english': {
                 'text': englishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}_1-1x.mp3`
               },
               'spanish': {
                 'text': spanishText,
@@ -145,7 +145,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               'profile_pic': '/assets/podsummary_lex.png',
               'english': {
                 'text': englishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}_1-1x.mp3`
               },
               'spanish': {
                 'text': spanishText,
@@ -157,7 +157,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               'profile_pic': '/assets/podsummary_lex.png',
               'english': {
                 'text': englishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}_1-1x.mp3`
               },
               'spanish': {
                 'text': spanishText,
@@ -169,7 +169,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               'profile_pic': '/assets/podsummary_lex.png',
               'english': {
                 'text': englishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}_1-1x.mp3`
               },
               'spanish': {
                 'text': spanishText,
@@ -183,7 +183,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               'profile_pic': '/assets/podsummary_deb.png',
               'english': {
                 'text': englishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/english/ep${episodeId}_1-1x.mp3`
               },
               'spanish': {
                 'text': spanishText,
