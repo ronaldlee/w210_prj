@@ -63,7 +63,7 @@ function PodcastMain() {
         <div className="h-[69px] flex-col justify-center items-start gap-1 inline-flex">
             <div className="self-stretch h-[47px] pr-[190px] pt-[13px] justify-start items-end gap-[7px] inline-flex">
                 <img className="w-[37px] h-[34px]" src={host+"/assets/AppLogo.svg"} />
-                <div className="w-[87px] h-[27px] text-black text-xl font-semibold font-['Poppins']">Browse</div>
+                <div className="w-[87px] h-[27px] text-black text-xl font-semibold font-['Poppins']">EchoBrief</div>
             </div>
             <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What do you want to hear today?</div>
         </div>
