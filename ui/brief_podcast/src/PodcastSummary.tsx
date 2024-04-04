@@ -99,7 +99,7 @@ function PodcastSummary() {
   }  
 
   const TranslationSelect = () => (
-    <Select options={translation_options} onChange={changeLanguage}/>
+    <Select className="font-['Poppins'] font-semibold" options={translation_options} onChange={changeLanguage}/>
   )
 
   return (
@@ -123,13 +123,13 @@ function PodcastSummary() {
         <img className="w-[375px] h-40 left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+profilePic}/>
 
         <div className="absolute top-[165px] left-[7px] w-[356px] h-[46px] overflow-y-auto flex flex-col items-start justfy-start text-base">
-            <div className="w-[356px] relative leading-[140%] font-medium inline-block h-[26px] shrink-0">{name}</div>
+            <div className="w-[356px] relative leading-[140%] font-medium inline-block h-[26px] shrink-0 font-['Poppins'] text-lg">{name}</div>
         </div>
 
         <div className="w-8 pl-0.5 pt-[3px] pb-0.5 left-[7px] top-[216px] absolute bg-neutral-700 rounded-[10px] flex-col justify-center items-center inline-flex">
             <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"/assets/AiIcon.svg"}/></div> 
         </div>
-        <div className="w-[138px] h-[34px] left-[213px] top-[217px] absolute bg-zinc-300 rounded-[5px]">
+        <div className="w-[138px] h-[34px] left-[213px] top-[215px] absolute bg-zinc-300 rounded-[5px]">
             {TranslationSelect()}
         </div>
         <div className="w-[375px] h-[465px] left-0 top-[262px] absolute bg-neutral-600">
