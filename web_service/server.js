@@ -137,7 +137,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               },
               'spanish': {
                 'text': spanishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish_1-1x.mp3`
               }
           },
           '22': {    
@@ -149,7 +149,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               },
               'spanish': {
                 'text': spanishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish_1-1x.mp3`
               }
           },
           '23': {    
@@ -161,7 +161,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               },
               'spanish': {
                 'text': spanishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish_1-1x.mp3`
               }
           },
           '94': {    
@@ -173,7 +173,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               },
               'spanish': {
                 'text': spanishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish_1-1x.mp3`
               }
           },
       },
@@ -187,7 +187,7 @@ app.get('/service/summary/:podcastId/:episodeId', async (req, res) => {
               },
               'spanish': {
                 'text': spanishText,
-                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish.mp3`
+                'audio': `http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/audio/${podcastId}/spanish/ep${episodeId}-spanish_1-1x.mp3`
               }
           }
       }
