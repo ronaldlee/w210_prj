@@ -1,0 +1,105 @@
+Deb:
+Hello, I'm Deb Donig, the host of Technically Human, a podcast that delves into the intersection of ethics and technology. Each week, I have the privilege of interviewing industry leaders, thinkers, writers, and technologists to explore what it truly means to be human in the age of tech. Together, we aim to understand the relationship between humans and the technologies we create and work towards building a better vision for technology that aligns with our human values. Today, I am thrilled to have Doctor Tamara Neese on the show. Doctor Neese is a highly accomplished individual, serving as the project director of Data and Society's Algorithmic Impact Methods Lab and a visiting scholar at UC Berkeley's center for Science, Technology, Medicine and Society. With a PhD in media, culture and communication from NYU and as the author of Death Glitch: How Techno-Solutionism Fails Us in This Life and Beyond, she brings a wealth of knowledge and expertise to our discussion. In addition to her professional achievements, Tamara also volunteers with the tech workers Coalition, demonstrating her commitment to making a positive impact in the tech industry. I am excited to delve into our conversation and gain insights from Doctor Tamara Neese.
+
+Deb:
+Hi Tamara.
+
+Tamara:
+Hi Deb.
+
+Deb:
+So, I want to talk about the recent landmark bill introduced by Congress. This bill is a significant step towards developing standards to measure and report the environmental impact of AI. It also aims to create a voluntary framework for AI developers to report environmental impacts. Additionally, the legislation requires an interagency study to investigate and measure both the positive and negative environmental impacts of AI. This is a crucial development in the regulation of AI and its environmental effects.
+
+Tamara:
+Yeah, so, first of all, we were really excited at data and society to hear about this bill because it is a bill that really calls for a very robust form of socio technical research. One of the problems with measuring the environmental impacts of AI is that it's actually quite hard to do, particularly if you're trying to measure impacts around every single part of the AI supply chain. So really thinking about all of the different effects that AI production and use can have around the world is something that a lot of technologists and advocates have been wanting to measure for quite some time. And so having legislation that is really pushing for it and pushing for the creation of standards around measurement and reporting is incredibly important.
+
+Deb:
+You said that researchers have wanted this legislation for a long time. Why hasn't it happened already? Has gotten in the way?
+
+Tamara:
+Measuring the environmental impact of something like AI is quite challenging because of the complex global supply chains involved in its production. It requires coordination across different parts of the supply chain and different companies from around the world. That's why the bill is relying on not just the EPA, but also the National Institute of Standards and Technology to convene a group of people who can identify the methodologies and standards needed for this kind of measurement work.
+
+Deb:
+What's the history behind this legislation? What are the concerns or incidents or discoveries that led to this proposed need to assess the environmental impact of AI.
+
+Tamara:
+As we delve into the world of large language models and generative AI, it becomes evident that these technologies require specialized chips and a significant amount of power, energy, and water for efficient operation. The growing problem of energy and water consumption associated with training and deploying AI is particularly concerning, especially within the ICT sector. Data centers supporting AI operations not only consume a tremendous amount of energy but also pollute local areas and deplete water resources, leading to environmental justice issues and carbon emissions. It's crucial to recognize that AI is just one part of a larger problem that has been ongoing for a long time, as seen in the history of chip manufacturing in Silicon Valley. Therefore, it's imperative to focus on making regulatory changes to address the real environmental costs of AI and technology.
+
+Deb:
+I know that this question is problematic, but I want to ask it anyway. When we're talking about AI and generative AI, there's a whole range of problems, concerns, issues, and dangers cited. These include the automation of labor leading to job loss, questions around compensation for labor, copyright questions about creativity, misinformation using generative AI, changes to the structure of how we get and source information online, and even the environmental impact. I am aware of the problematics of trying to rank or propose a hierarchy of problems, but where would the environmental impact rank in the hierarchy of problems caused by AI?
+
+Tamara:
+I believe that the environmental impacts of AI are closely linked to labor problems. Focusing on the environmental impact of AI can lead to a more comprehensive understanding of the potential harms it poses. The entire AI supply chain involves different parts of the world and various forms of labor exploitation, and there are trade-offs to consider, such as the false promise of bringing jobs with data centers. Data centers have significant downstream effects on communities, including noise, power consumption, and water usage, as well as health and environmental impacts. Justice concerns and impacts on marginalized communities are intertwined with labor and ethics in the discussion of environmental impact. Considering the full spectrum of impacts from AI involves effects on habitats, ecosystems, and other species.
+
+Deb:
+So, as we delve into the world of AI, it's crucial to understand the full spectrum of impact it has on the environment. We need to study and measure its environmental impact, and comprehensively assess all the issues and areas involved. This broader question of how to study AI's environmental impact is a critical one that we must address.
+
+Tamara:
+Yeah, it's a great question. I think a lot of researchers have spent time focusing on measuring the carbon attached to training and deployment of AI. Some have pushed for a lifecycle analysis, looking at the potential e-waste and the social impacts. It's incredibly difficult to measure, but we need to bridge the relationship between technical assessments and social impacts. In the tech industry, we need to make choices more visible to developers for better environmental impact. Different perspectives on measuring and reporting environmental impacts exist, including from grassroots community groups. That's where the work at Aim lab comes in, reconciling the technical and socio-technical perspectives.
+
+Deb:
+I have had the opportunity to work across various sectors, from academia to industry and now at a public interest technology research center. Through my experience, I have noticed fractures in the way different communities approach the benefits and harms of AI. There are gaps in knowledge between these sectors, leading to tensions and controversial conversations. I believe that understanding these silos in knowledge is crucial in bridging the gaps and fostering productive discussions across industries.
+
+Tamara:
+I believe that having a broad understanding of a problem and looking at it from different perspectives is crucial, especially in research. People define problems differently and work on different timelines, which can create challenges. In tech companies, demonstrating return on investment and real impact is essential for the value of research. Collaboration between socio technical researchers and the tech industry can provide valuable perspectives and reframing of problems. Understanding power dynamics and hierarchies in tech is important for policy recommendations and implementation. This is the kind of work we are trying to do at AIM Lab, where we aim to lend our expertise to the tech industry and provide valuable insights.
+
+Deb:
+I am trying to better understand the tensions surrounding climate change, environmental harms, and AI. On one hand, leaders in the tech industry highlight the ways that AI can help solve or mitigate climate change and environmental harm by reducing inefficiencies and creating new technologies. However, there are concerns about the environmental and energy expenses of data centers, e-waste, and mining for tech resources. Additionally, there is a debate about job creation, retraining efforts, and the skills required for new jobs in the AI industry. This controversy also involves assessing the benefits of AI against the harms to the environment and labor. How do we go about trying to provide an impact assessment for all these factors?
+
+Tamara:
+Yeah, it's a great question. I think if we take a step back, a lot of the technology being developed in the name of climate friendliness or climate justice may not behave as expected. The development of AI for environmental purposes should involve input from the communities it is meant to help. Similar to the backlash against crypto and NFTs, there is a concern that climate-related AI products may not be executed in a helpful way. This is something that really needs to be addressed in the tech industry.
+
+Deb:
+I believe that algorithmic impact assessments are crucial in today's technological landscape. As I have previously stated, when people and ecologies intersect with technical systems, there are always unanticipated consequences. It is imperative for us to actively identify and document a push back against these sometimes ambient harms.
+
+Tamara:
+I believe that it is crucial to involve the people who will be impacted by a technology early in the development process. Engaging the community can help us identify potential problems before the technology is deployed. It is also important to document potential harms and raise red flags around privacy and bias, and to encourage developers to fully assess and fix issues before releasing the technology. Furthermore, we should question if the technology should be developed and released at all, and consider if there are better ways to allocate resources. It is important to keep an open mind and not rush to release a product that could potentially cause havoc.
+
+Deb:
+I want to delve deeper into the issue of identifying and assessing the harms of AI products. It's not just about recognizing the potential problems, but also about the possibility that AI products may not work as intended. Take for example the AI poop picking up robots developed in San Francisco to address the issue of human feces on the streets. While this may seem like a technical solution, the better alternative, as pointed out by Dan Lyons, is public restrooms. This brings to light the incentive for developers to create marketable products rather than focusing on solving the actual problem. The economics behind product development and the motivation to attract funding and venture capital often overshadow the goal of solving real issues. So, the question is, how can we push back against this trend and utilize our understanding and assessments to make a real difference?
+
+Tamara:
+As a labor organizer, my favorite part of this work is translating empirical findings into policy changes, legal strategies, and bargaining strategies. It's a challenge to document and prove algorithmic wage discrimination and advocate for changes to policy and legal recourse. Laws like New York City local law 144 requiring employers to audit automated employment decision tools are not always effective in demonstrating bias. That's why the Workers' Algorithm Observatory at AIM Lab is conducting algorithmic inquiry with rideshare drivers to understand and combat algorithmic wage discrimination. It's crucial to conduct research that is beneficial to the people being advocated for.
+
+Deb:
+I want to delve deeper into the power differential between those who create AI and those who are subjected to it. We need to consider our options to push back on tech companies and AI companies, especially those who have accrued tremendous power and wealth. These companies have set norms and standards that prioritize their ability to profit and limit their liability for the harms they cause. Their products have become deeply institutionalized in our environment, making it difficult for us to alter their effects or extract ourselves from them. Additionally, these companies have massive lobbying power and money to fight lawsuits, and their wealth and profit often allow them to pay fines without affecting their business practices. It's clear that the profit they gain from creating and distributing their products far exceeds any penalty they may accrue from violations.
+
+Tamara:
+I believe that the control of large scale AI by just a few companies is truly frightening. It's not just about the technology itself, but also about the power that these companies have over people's lives. We need to radically reformulate our ideas about what makes a successful product or company, and prioritize the welfare of everyone on the planet over profits and shareholder well-being. However, I'm not very hopeful that this will happen without some massive structural change. In the meantime, we need to exert pressure from different areas, including within tech companies, through policy changes, grassroots organizations, academic researchers, and impacted communities. It's crucial that we collectively have more power over how technology is produced and used.
+
+Deb:
+I want to delve into the concept of harm caused by technology. Should we distinguish between intentional harm and unintended harm? Are overlooked consequences truly unpredictable or the result of negligence? The value system of tech production often disregards the harm caused by its products. For example, the idea that a technology may disconnect us from our environment is not considered harmful because it provides efficiency. However, I believe that the removal of the capricious from our environment could be harmful. While bad actors may use technology in unintended ways, the majority of harms come from good users using the product as intended. How do you think about the idea of unintended consequences in tech culture?
+
+Tamara:
+I strongly believe that we need more historians in tech spaces to provide a historical context for new innovations. At Intel, I brought in historians like Mar Hicks and Cassidyre to talk about the history of queer and trans computing, and how it is connected to the present. It's crucial to understand that what may seem like brand new technology is actually linked to something that happened a long time ago. By acknowledging larger histories and societal issues, we can anticipate potential harms and social dynamics related to new technologies. It's not just about a few bad actors or intentional harm for profits, but about the larger problems of racism, sexism, homophobia, and inequality in our society. We need to build things while acknowledging these realities to avoid running into problems.
+
+Deb:
+I just want to take a moment to encourage everyone listening to check out Mar's episode of this show. In our interview, she emphasized the significance of the present moment of technological production being influenced by the narratives and histories of the past. This is an important perspective to consider. I also recently read your piece in Wired about the use of generative AI to resurrect the dead and the potential burden it may create for the living. Your concerns about the environmental impact of generative AI and the human costs involved in giving voice to the dead are thought-provoking. It's crucial to carefully consider these implications as we continue to advance in AI technology.
+
+Tamara:
+Yeah, so, in terms of preserving the data of the dead, it kind of gets at this larger problem in the tech industry, where data is power. Individual users' data is collected and maintained, but Google recently announced deactivating inactive accounts due to the cost and amount of data. The expansion of data centers for generative AI will have a massive environmental impact. Creating AI versions of the dead raises ethical questions around authority, control, and profit. Deepfake technology and using deceased celebrities without consent raises ethical concerns. The idea of monetizing a person's likeness after death creates labor-related problems. These are all thorny issues that need to be addressed.
+
+Deb:
+I am eager to explore the connections between labor, environmental harm, and the preservation of data, particularly data related to the deceased. My research has focused on how socio-technical systems, like social media and AI, are reshaping cultural rituals and attitudes towards death, as discussed in my book "Death Glitch: How Techno-Solutionism Fails Us in This Life and Beyond." Additionally, I am currently involved in the AI impact lab at data and society, where I continue to investigate these important themes.
+
+Tamara:
+Yeah, definitely. I really feel like the problem of death is a very old human problem, and it's a fairly universal problem. Despite what the transhumanists tell us, death is definitely coming for everyone. People have always had different ways of memorializing the dead, and the treatment of the dead can reveal social hierarchies within a society. It's fascinating to see how death disrupts the original plan for technologies like social media. Tech companies often overlook the impact of death in their products, but considering the impact of death is important for assessing algorithmic systems and their social impacts. I think death is an incredibly rich field site for really thinking about algorithmic impacts.
+
+Deb:
+I want to address the concept of techno solutionism and its cousin, techno utopianism. As a society, it's important to consider these ideologies and practices and their impact on how we move forward. We need to think about what they get right, but also what they miss or misunderstand in terms of shaping our vision for the future.
+
+Tamara:
+I believe that techno solutionism can be useful for addressing specific pain points or failures in technology. However, the larger issue lies in using technology to solve social problems that may not necessarily require technological solutions. Building relationships and maintaining ongoing dialogue with communities impacted by technology is crucial in this process. It is important to imagine alternative futures beyond the techno utopianism of Elon Musk and to reimagine technology while also building it differently. Additionally, I am interested in exploring the magical and mystical qualities of technology that go beyond its mundane uses. I believe that there is potential for technology to be used in transcendent ways, and I am interested in digging into these alternative uses of technology.
+
+Deb:
+As a professor teaching a course on data and human values at UC Berkeley, I am aware that many students across college campuses and universities listen to this show. Transitioning to data and society after years in the academy, I understand that many of my students will end up in the tech industry. It is important for them to know, think about, understand, and reconsider certain aspects as they move into their careers.
+
+Tamara:
+Yeah, it's a great question. When I talk to younger generations who want to go into tech, I see a growing awareness of potential problems and a hunger for training in critical technology studies. It's important to understand the history of technology and the tech industry, and to learn from activists and organizers from the past. Building coalitions with people outside of tech and learning from their experiences is valuable. Engaging with different communities and their concerns, such as through volunteering, can help make tech more ethical and impactful. So, it's important to read widely, talk to people outside of tech, and continue learning from those who came before us.
+
+Deb:
+Thank you so much, Tamara.
+
+Tamara:
+Thank you, Deb.
+
