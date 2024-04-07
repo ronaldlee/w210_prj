@@ -1,43 +1,11 @@
 // @ts-nocheck
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import Select from 'react-select'
-
-/**
-Pod Summary profile pic
-    <img className="w-[375px] h-40 rounded-tl-[32px] rounded-tr-[32px]" src="https://via.placeholder.com/375x160" />
-    <img className="w-[375px] h-40 rounded-tl-[32px] rounded-tr-[32px]" src="../assets/PodcastSummaryProfile.png" />
-
-Ai Icon
-        <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex" />
-        <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src="../assets/AiIcon.svg"/></div>
-
-Language dropdown arrow
-        <div className="w-5 h-5 left-[109px] top-[8px] absolute" />
-        <div className="w-5 h-5 left-[109px] top-[8px] absolute"><img src="../assets/LanguageDropdownArrow.svg"/></div>
-
-Play summary button
-        <div className="w-[310px] h-[72px] left-[21px] top-[486px] absolute justify-between items-center inline-flex">
-            <div className="w-[54px] h-[54px] relative"/>
-        </div>
-
-            <div className="w-[310px] h-[72px] left-[33px] top-[400px] absolute justify-center items-center inline-flex">
-                <div className="w-[54px] h-[54px] relative"><img src="../assets/PlaySummaryButton.svg"/></div>
-            </div>
-
-Back button
-        <div className="w-[53px] h-[52px] relative" />
-        <div className="w-[53px] h-[52px] relative"><img src="../assets/BackButton.svg"/></div>
-
-<!--
-            <div className="w-[101px] h-[13px] left-[15px] top-[6px] absolute text-black text-[15px] font-semibold font-['Poppins']">English</div>
-            <div className="w-5 h-5 left-[109px] top-[8px] absolute"><img src={host+"/assets/LanguageDropdownArrow.svg"}/></div>
--->
-*/
 
 
 
@@ -63,12 +31,17 @@ function PodcastSummary() {
   const [summaryAudio, setSummaryAudio] = useState('')
   const [lang, setLang] = useState('english')
 
+  const audioRef = useRef(null);
+  const [activeCue, setActiveCue] = useState(null);
+
+
   const { podcastId, episodeId } = useParams()
-  const host='http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:5173/'
+  const host='http://localhost:5173/'
+  const serverHost='http://localhost:8080/'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: summary_data} = await axios.get('http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:8080/summary/'+podcastId+'/'+episodeId);
+      const {data: summary_data} = await axios.get('http://localhost:8080/summary/'+podcastId+'/'+episodeId);
       setSummaryData(summary_data)
       setLang('english')
       setSummary(summary_data['english']['text'])
@@ -76,6 +49,36 @@ function PodcastSummary() {
     }
     fetchData()
   }, [podcastId, episodeId]);
+
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.addEventListener('loadedmetadata', () => {
+        const textTrack = audio.textTracks[0];
+        console.log(textTrack)
+        textTrack.mode = 'showing';
+        textTrack.oncuechange = () => {
+          console.log('Cues have changed');
+          const activeCues = textTrack.activeCues;
+          setActiveCue(activeCues && activeCues.length > 0 ? activeCues[0].text : "");
+          console.log(activeCues); 
+        };
+      });
+    }
+  
+    return () => {
+      if (audio) {
+        const textTrack = audio.textTracks[0];
+        if (textTrack) {
+          textTrack.oncuechange = null;
+        }
+      }
+    };
+  }, []);
+  
+  
+  
 
   let navigate = useNavigate();
   const routeChange = (path) =>{
@@ -125,11 +128,22 @@ function PodcastSummary() {
             {TranslationSelect()}
         </div>
         <div className="w-[375px] h-[485px] left-0 top-[242px] absolute bg-neutral-600">
-            <div className="w-80 h-[319px] left-[22px] top-[20px] absolute flex-col justify-start items-start gap-2 inline-flex">
-                <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">{summary}</div>
+          <div className="absolute top-[20px] left-[22px] w-80 h-[370px] overflow-y-auto flex flex-col items-start justify-start">
+                <div className="w-80 h-[327px] text-white text-lg font-semibold font-['Poppins'] leading-[25.20px]">
+                {summaryData[lang]['text'].split(/\s+/).map((word, index) => {
+                  const isCueActive = activeCue && activeCue.text.includes(word);
+                  return (
+                    <span key={index} style={{ backgroundColor: isCueActive ? 'yellow' : 'transparent' }}>
+                      {word + ' '}
+                    </span>
+                  );
+                })}
+                </div>
             </div>
             <div className="w-[310px] h-[72px] left-[33px] top-[400px] absolute justify-center items-center inline-flex">
-                <audio controls src={summaryAudio}/>
+              <audio controls src={summaryAudio} ref={audioRef}>
+                <track kind="captions" src={`${serverHost}/vtt/${lang}/ep${episodeId}.vtt`} default />
+              </audio>
             </div>
         </div>
     </div>

@@ -1,0 +1,175 @@
+WEBVTT
+
+00:00:00.230 --> 00:00:07.850
+The podcast features Thomas Sandholm, a professor at CMU and co-creator of Libratus, the first A.I.
+
+00:00:07.850 --> 00:00:12.920
+system to be top human players in the game of Heads up No Limit Texas Hold'em.
+
+00:00:13.720 --> 00:00:20.560
+This game is considered a benchmark for testing AI algorithms for imperfect information game solving.
+
+00:00:21.390 --> 00:00:35.040
+In 2017, Libratus beat four expert human players in a 20 day competition at the Rivers Casino, challenging the belief in the importance of human facial expressions and body language in poker.
+
+00:00:36.020 --> 00:00:47.300
+The podcast discusses the importance of tells in poker, especially at lower levels of play, and how they become less significant as the game becomes more complex at higher levels.
+
+00:00:48.420 --> 00:00:58.500
+The game of poker involves a large number of strategies and possible actions, requiring abstraction to solve the game tree in an imperfect information game.
+
+00:00:59.620 --> 00:01:08.920
+Abstraction in games, particularly in poker, is more challenging than in other types of games, and can lead to worse strategies if not done properly.
+
+00:01:09.840 --> 00:01:20.220
+There are different kinds of abstractions in games, such as hands, abstractions and betting strategies than the algorithms used for information and action abstraction.
+
+00:01:20.220 --> 00:01:22.200
+Consider various factors.
+
+00:01:23.170 --> 00:01:24.760
+The strength of the hand.
+
+00:01:24.760 --> 00:01:33.880
+Information, abstraction and betting actions are all important in playing poker, and playing a lot of hands can reduce the role of luck in the game.
+
+00:01:34.720 --> 00:01:35.530
+No limit.
+
+00:01:35.560 --> 00:01:45.100
+Texas hold'em has a high level of variance and massive swings, requiring statistical significance to be achieved over a large number of hands.
+
+00:01:46.190 --> 00:01:57.200
+The podcast also discusses the use of learning methods such as deep learning to aid in poker playing, and the effectiveness of these methods in comparison to non-learning methods.
+
+00:01:58.390 --> 00:02:11.350
+In imperfect information games like poker, the value of an information set depends not only on the exact state, but also on both players beliefs, making it a complex and challenging game to master.
+
+00:02:12.290 --> 00:02:21.020
+The podcast discusses the state of a game and how it is determined by the path of play and belief distributions, not just the cards.
+
+00:02:22.090 --> 00:02:32.380
+It explains that perfect information games have a straightforward concept of state and evaluation function, but in games like poker, it is more complicated.
+
+00:02:33.310 --> 00:02:42.070
+The opponents strategies at the leaf of the search tree are considered in evaluating the game state, leading to a more realistic look ahead search.
+
+00:02:43.000 --> 00:02:43.780
+Look ahead.
+
+00:02:43.780 --> 00:02:54.790
+Search in imperfect information games is difficult, and techniques like deep learning and Monte Carlo tree search are used to learn the values of states and belief distributions.
+
+00:02:55.720 --> 00:03:04.450
+The podcast also delves into the concept of beliefs as outputs, Nash equilibrium and the use of Bayes theorem in game theory.
+
+00:03:05.490 --> 00:03:13.260
+Game Theory is a data free and opponent free approach that focuses on the design of the game, rather than the design of the player.
+
+00:03:14.360 --> 00:03:21.590
+It is based on rationality and considers what a rational opponent would do and what the player would do if they are rational.
+
+00:03:22.700 --> 00:03:32.660
+Opponent modeling is not a primary focus in game theory, although there has been some work on combining opponent modeling with game theory to exploit weak players.
+
+00:03:33.570 --> 00:03:41.130
+The decision not to turn on certain strategies is based on the belief that opponents are experts in counter exploitation.
+
+00:03:42.060 --> 00:03:54.840
+The impact of opponents irrational behaviour on beliefs and gains losses is discussed, as well as the concept of unbeatable game theoretic strategies that do not maximally beat the opponent.
+
+00:03:55.860 --> 00:04:05.340
+Repeated games, including the prisoner's dilemma, are also explored, with the understanding that purely repeated games are rare in the real world.
+
+00:04:06.240 --> 00:04:17.610
+The text discusses different types of games, including matrix games, stochastic games, and extensive form games, and the concept of reasoning in the tree form of games.
+
+00:04:18.540 --> 00:04:30.300
+The distinction between two player zero sum games and two player general sum games is highlighted, as well as the concept of Nash equilibrium in non-zero-sum games.
+
+00:04:31.290 --> 00:04:41.430
+The podcast discusses the importance of coordination in games like bridge, as well as in negotiations, business, and other real world applications.
+
+00:04:42.550 --> 00:04:52.030
+It introduces two start up companies, Strategic Machine and Strategy Robot, which focus on different applications of coordination strategies.
+
+00:04:52.870 --> 00:04:59.170
+The use of game theoretic reasoning technologies in optimized markets is also explored.
+
+00:05:00.180 --> 00:05:15.060
+The podcast delves into the challenges of modeling human behavior in situations like pedestrian and car negotiation in the world of autonomous vehicles, and the potential benefits of automated negotiation in improving traffic flow.
+
+00:05:16.060 --> 00:05:23.980
+It also touches on the difficulty of AI in solving non-zero-sum games and the complexities of collusion in games.
+
+00:05:24.950 --> 00:05:32.210
+The speakers work on Coalitional games and a new game representation for dealing with collusion is also mentioned.
+
+00:05:33.270 --> 00:05:41.490
+Overall, the podcast provides insights into the various aspects of coordination and negotiation in different contexts.
+
+00:05:42.570 --> 00:05:53.250
+The podcast discusses the first competition for heads up No Limit Poker, in which the speaker used their AI to crack the game and became the most hated person in the world of poker.
+
+00:05:54.170 --> 00:06:02.510
+Many people felt that I posed a threat to the existence of the game, and the speaker received aggressive reactions and even death threats.
+
+00:06:03.290 --> 00:06:13.790
+Despite AI outperforming humans in chess, the speaker believes that humans can still enjoy poker and that AI has actually made the game richer and more interesting.
+
+00:06:14.640 --> 00:06:20.010
+The top human players are now incorporating strategies from ash into their own play.
+
+00:06:20.950 --> 00:06:28.600
+The speaker has learned to love the game of poker through working with ash, and did not intend to kill the game of poker.
+
+00:06:29.590 --> 00:06:42.850
+The podcast also delves into the engineering and scientific efforts behind AI's ability to beat human players, emphasizing the importance of performance oriented research and testing algorithms at scale.
+
+00:06:44.030 --> 00:06:53.180
+The speaker shares their personal experience with organizing the first brains versus AI poker competition, describing it as a wild experience.
+
+00:06:54.060 --> 00:07:02.760
+The podcast discusses the challenges of applying good ideas at scale, emphasizing the importance of real world implementation.
+
+00:07:03.800 --> 00:07:17.360
+It delves into the concept of mechanism design, which involves designing rules to achieve desirable outcomes and explores the potential for automated mechanism design in various fields, including politics.
+
+00:07:18.340 --> 00:07:29.890
+The speaker acknowledges the existence of impossibility results in mechanism design, but highlights the possibility of carving out islands of possibility within known impossible classes.
+
+00:07:30.510 --> 00:07:38.250
+The Myerson-satterthwaite theorem is cited as an example of achieving efficient trade despite impossibility results.
+
+00:07:39.190 --> 00:07:53.620
+The podcast also touches on the limited success of mechanism design in real world situations, citing the FCC spectrum auctions as an example where game theory principles do not align with practical rules.
+
+00:07:54.540 --> 00:08:03.360
+Overall, the podcast emphasizes the importance of applying insights from mechanism design theory into real world scenarios.
+
+00:08:03.940 --> 00:08:14.860
+The podcast discusses the lack of an optimal bidding strategy in spectrum auctions and the history of AI achievements in game solving, such as AlphaGo and Liberatus.
+
+00:08:15.890 --> 00:08:25.310
+The speaker hopes for a new benchmark to drive application independent techniques forward, and is involved in startups related to game solving technology.
+
+00:08:26.120 --> 00:08:33.920
+They believe that game solving technology has the potential to be strategically used in military planning and business strategy.
+
+00:08:34.930 --> 00:08:45.940
+The speaker also compares the transparency and explainability of machine learning methods, such as neural networks, with game theoretic methods like Nash equilibria.
+
+00:08:47.160 --> 00:08:58.110
+They express excitement about the future of provable optimality in game theory, but also express concerns about the negative impact of artificial intelligence on society.
+
+00:08:59.360 --> 00:09:21.170
+The podcast covers a wide range of topics including poker, business strategy, military strategy, algorithm configuration, kidney exchange, combinatorial sourcing, auctions, AI, game theory, nuclear weapons, climate change, market design, autonomous vehicles, and game solving.
+
+00:09:22.190 --> 00:09:31.520
+The speaker is interested in scalable techniques for integer programming and applying state of the art techniques to benefit various industries and players.
+
+00:09:32.430 --> 00:09:44.490
+They express concern about the potential misuse of AI and the threat of nuclear war, while also discussing the potential for advancements in AI and the impact of autonomous vehicles.
+
+00:09:45.410 --> 00:10:00.380
+The podcast emphasizes the need for market solutions and technology solutions for problems such as pollution, and the importance of finding internal champions at the customer level to drive, change and prevent negative outcomes in the future.

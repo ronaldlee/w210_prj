@@ -106,11 +106,11 @@ app.get('/summary/:podcastId/:episodeId', async (req, res) => {
     const summary = {
       'english': {
         'text': englishText,
-        'audio': `http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:8080/audio/english/ep${episodeId}.mp3`
+        'audio': `http://localhost:8080/audio/english/ep${episodeId}.mp3`
       },
       'spanish': {
         'text': spanishText,
-        'audio': `http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:8080/audio/spanish/ep${episodeId}-spanish.mp3`
+        'audio': `http://localhost:8080/audio/spanish/ep${episodeId}-spanish.mp3`
       }
     };
 

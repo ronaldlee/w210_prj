@@ -1,0 +1,236 @@
+WEBVTT
+
+
+::cue(v[voice="Speaker1"]) { color: white }
+
+1
+00:00:00.110 --> 00:00:09.980
+<v Speaker1>El podcast presenta a Thomas Shannon, profesor de la CMU y cocreador de Libratus, el primer sistema de IA que derrotó a los mejores jugadores humanos en el juego.
+
+2
+00:00:10.070 --> 00:00:12.050
+<v Speaker1>Heads Up No Limit Texas Holdem.
+
+3
+00:00:13.270 --> 00:00:22.120
+<v Speaker1>Este juego se considera un punto de referencia para probar algoritmos de inteligencia artificial para resolver juegos de información imperfectos.
+
+4
+00:00:23.420 --> 00:00:37.790
+<v Speaker1>En 2017, Libratus venció a cuatro jugadores humanos expertos en una competición de 20 días en el River's Casino, lo que puso en duda la importancia de las expresiones faciales y el lenguaje corporal humanos en el póker.
+
+5
+00:00:38.980 --> 00:00:52.090
+<v Speaker1>El podcast habla sobre la importancia de las habilidades en el póquer, especialmente en los niveles más bajos del juego y sobre cómo pierden importancia a medida que el juego se hace más complejo en los niveles superiores.
+
+6
+00:00:53.130 --> 00:01:02.790
+<v Speaker1>El póquer implica un gran número de estrategias y acciones posibles que requieren abstracción para resolver el árbol de juego en un juego de información imperfecto.
+
+7
+00:01:03.760 --> 00:01:13.870
+<v Speaker1>La abstracción En los juegos, especialmente en el póker, es más difícil que en otros tipos de juegos y puede conducir a estrategias peores si no se hace correctamente.
+
+8
+00:01:15.080 --> 00:01:28.370
+<v Speaker1>Hay diferentes tipos de abstracciones en los juegos, como las abstracciones de manos y las estrategias de apuestas, y los algoritmos utilizados para la abstracción de la información y las acciones tienen en cuenta varios factores.
+
+9
+00:01:29.450 --> 00:01:41.870
+<v Speaker1>La fuerza de la mano, La abstracción de la información y las acciones de apuestas son todos factores importantes a la hora de jugar al póker y jugar muchas manos puede reducir el papel de la suerte en el juego.
+
+10
+00:01:43.080 --> 00:01:53.370
+<v Speaker1>El Texas Hold Em sin límite tiene un alto nivel de varianza y cambios masivos, por lo que es necesario alcanzar la significación estadística en un gran número de manos.
+
+11
+00:01:54.690 --> 00:02:07.590
+<v Speaker1>El podcast también analiza el uso de métodos de aprendizaje como el aprendizaje profundo para ayudar a jugar al póquer y la eficacia de estos métodos en comparación con los métodos que no son de aprendizaje.
+
+12
+00:02:08.730 --> 00:02:12.000
+<v Speaker1>En juegos con información imperfecta como el póker.
+
+13
+00:02:12.000 --> 00:02:23.310
+<v Speaker1>El valor de un conjunto de información depende no sólo del estado exacto, sino también de las creencias de ambos jugadores, lo que lo convierte en un juego complejo y difícil de dominar.
+
+14
+00:02:24.350 --> 00:02:34.430
+<v Speaker1>En el podcast se analiza el estado de un juego y la manera en que éste se determina por la forma en que se juega y por la distribución de creencias, no sólo por las cartas.
+
+15
+00:02:35.550 --> 00:02:45.300
+<v Speaker1>Explica que los juegos de información perfecta tienen un concepto sencillo de estado y función de evaluación, pero en juegos como el póker es más complicado.
+
+16
+00:02:46.440 --> 00:02:57.510
+<v Speaker1>Al evaluar el estado de la partida se tienen en cuenta las estrategias del oponente que aparecen al final del árbol de búsqueda, lo que lleva a una búsqueda más realista con visión de futuro.
+
+17
+00:02:58.720 --> 00:03:12.970
+<v Speaker1>La búsqueda prospectiva en los juegos de información imperfecta es difícil y se utilizan técnicas como el aprendizaje profundo y la búsqueda con árboles de Montecarlo para conocer los valores de los estados y las distribuciones de creencias.
+
+18
+00:03:14.040 --> 00:03:23.460
+<v Speaker1>El podcast también profundiza en el concepto de las creencias como resultados, el equilibrio de Nash y el uso del teorema de Bayes en la teoría de juegos.
+
+19
+00:03:24.550 --> 00:03:31.960
+<v Speaker1>La teoría de juegos es un enfoque sin datos ni oponentes que se centra en el diseño del juego más que en el diseño del jugador.
+
+20
+00:03:33.020 --> 00:03:39.950
+<v Speaker1>Se basa en la racionalidad y considera lo que haría un oponente racional y lo que haría el jugador si fuera racional.
+
+21
+00:03:40.940 --> 00:03:45.410
+<v Speaker1>El modelado del oponente no es un enfoque principal en la teoría de juegos.
+
+22
+00:03:45.410 --> 00:03:52.610
+<v Speaker1>Aunque se ha trabajado para combinar el modelado del oponente con la teoría de juegos para aprovechar a los jugadores débiles.
+
+23
+00:03:53.820 --> 00:04:01.440
+<v Speaker1>La decisión de no utilizar ciertas estrategias se basa en la creencia de que los oponentes son expertos en contra explotación.
+
+24
+00:04:02.570 --> 00:04:15.890
+<v Speaker1>Se discute el impacto del comportamiento irracional del oponente en las creencias y en las ganancias derrotas, así como el concepto de estrategias imbatibles de la teoría del juego que no derrotan al oponente al máximo.
+
+25
+00:04:17.010 --> 00:04:21.720
+<v Speaker1>También se exploran las partidas que se repiten, como el dilema del prisionero.
+
+26
+00:04:21.720 --> 00:04:26.820
+<v Speaker1>Teniendo en cuenta que las partidas que sólo se repiten son raras en el mundo real.
+
+27
+00:04:27.960 --> 00:04:39.810
+<v Speaker1>El texto analiza diferentes tipos de juegos, incluidos los juegos de matrices, los juegos estocásticos y los juegos de forma extensa y el concepto de razonamiento en forma de árbol.
+
+28
+00:04:40.930 --> 00:04:52.750
+<v Speaker1>Se destaca la distinción entre los juegos de suma cero para dos jugadores y los juegos de suma general para dos jugadores, así como el concepto del equilibrio de Nash en los juegos de suma distinta de cero.
+
+29
+00:04:53.790 --> 00:05:03.360
+<v Speaker1>El podcast analiza la importancia de la coordinación en juegos como el bridge, así como en las negociaciones, los negocios y otras aplicaciones del mundo real.
+
+30
+00:05:04.440 --> 00:05:13.620
+<v Speaker1>Presenta dos empresas emergentes, Strategic Machine y Strategy Robot que se centran en diferentes aplicaciones de las estrategias de coordinación.
+
+31
+00:05:14.700 --> 00:05:20.880
+<v Speaker1>También se explora el uso de tecnologías de razonamiento teórico de juegos en mercados optimizados.
+
+32
+00:05:22.190 --> 00:05:37.730
+<v Speaker1>El podcast profundiza en los desafíos de modelar el comportamiento humano en situaciones como la negociación entre peatones y automóviles en el mundo de los vehículos autónomos y los posibles beneficios de la negociación automatizada para mejorar el flujo de tráfico.
+
+33
+00:05:38.880 --> 00:05:46.590
+<v Speaker1>También aborda la dificultad de la IA para resolver juegos que no sean de suma cero y las complejidades de la colusión en los juegos.
+
+34
+00:05:47.640 --> 00:05:56.040
+<v Speaker1>También se menciona el trabajo del orador sobre los juegos de coalición y sobre una nueva representación en el juego para hacer frente a la colusión.
+
+35
+00:05:57.060 --> 00:06:05.010
+<v Speaker1>En general, el podcast ofrece información sobre los diversos aspectos de la coordinación y la negociación en diferentes contextos.
+
+36
+00:06:06.160 --> 00:06:09.310
+<v Speaker1>El podcast habla sobre la primera competición de póker.
+
+37
+00:06:09.370 --> 00:06:17.350
+<v Speaker1>Heads up no limit, en la que el orador utilizó la IA para resolver el juego y se convirtió en la persona más odiada del mundo del póker.
+
+38
+00:06:18.380 --> 00:06:27.560
+<v Speaker1>Muchas personas opinaron que la IA ponía en peligro la existencia del juego y el orador recibió reacciones agresivas e incluso amenazas de muerte.
+
+39
+00:06:28.800 --> 00:06:40.230
+<v Speaker1>A pesar de que la IA supera a los humanos en el ajedrez, el orador cree que los humanos aún pueden disfrutar del póker y que, de hecho, la IA ha hecho que el juego sea más rico e interesante.
+
+40
+00:06:41.310 --> 00:06:47.160
+<v Speaker1>Los mejores jugadores humanos ahora están incorporando estrategias de la IA en su propio juego.
+
+41
+00:06:48.290 --> 00:06:55.220
+<v Speaker1>El orador ha aprendido a amar el póker trabajando con IA y no pretendía acabar con el juego del póker.
+
+42
+00:06:56.620 --> 00:07:12.520
+<v Speaker1>El podcast también profundiza en los esfuerzos científicos y de ingeniería que respaldan la capacidad de la IA para derrotar a los jugadores humanos y hace hincapié en la importancia de realizar investigaciones orientadas al rendimiento y probar los algoritmos a escala.
+
+43
+00:07:13.720 --> 00:07:23.440
+<v Speaker1>El ponente comparte su experiencia personal al organizar la primera competición de póker entre el cerebro y la IA y la describe como una experiencia increíble.
+
+44
+00:07:24.570 --> 00:07:33.240
+<v Speaker1>El podcast analiza los desafíos de aplicar buenas ideas a gran escala, haciendo hincapié en la importancia de la implementación en el mundo real.
+
+45
+00:07:34.380 --> 00:07:48.150
+<v Speaker1>Profundiza en el concepto de diseño de mecanismos que implica el diseño de reglas para lograr los resultados deseables y explora el potencial del diseño de mecanismos automatizados en varios campos, incluida la política.
+
+46
+00:07:49.180 --> 00:08:00.760
+<v Speaker1>El orador reconoce que la existencia de lo imposible resulta en el diseño de mecanismos, pero destaca la posibilidad de crear islas de posibilidades dentro de las clases de imposibles conocidas.
+
+47
+00:08:01.880 --> 00:08:09.830
+<v Speaker1>Se cita el teorema de Meyerson Satterthwaite como ejemplo de cómo lograr un comercio eficiente a pesar de los resultados imposibles.
+
+48
+00:08:11.120 --> 00:08:26.060
+<v Speaker1>El podcast también aborda el éxito limitado del diseño de mecanismos en situaciones del mundo real y cita las subastas de espectro de la FCC como un ejemplo en el que los principios de la teoría de juegos no se alinean con las reglas prácticas.
+
+49
+00:08:27.150 --> 00:08:36.120
+<v Speaker1>En general, el podcast hace hincapié en la importancia de aplicar los conocimientos de la teoría del diseño de mecanismos a escenarios del mundo real.
+
+50
+00:08:37.230 --> 00:08:47.910
+<v Speaker1>El podcast analiza la falta de una estrategia de puja óptima en las subastas de espectro y la historia de los logros de la IA en la resolución de juegos como AlphaGo y Libratus.
+
+51
+00:08:49.040 --> 00:09:01.400
+<v Speaker1>El ponente espera encontrar un nuevo punto de referencia para impulsar las técnicas independientes de la aplicación y participa en empresas emergentes relacionadas con la tecnología de resolución de juegos.
+
+52
+00:09:02.500 --> 00:09:11.500
+<v Speaker1>Creen que la tecnología de resolución de juegos tiene el potencial de usarse estratégicamente en la planificación militar y la estrategia empresarial.
+
+53
+00:09:12.600 --> 00:09:24.660
+<v Speaker1>El ponente también compara la transparencia y la explicabilidad de los métodos de aprendizaje automático como las redes neuronales con los métodos de la teoría de juegos como los equilibrios de Nash.
+
+54
+00:09:25.830 --> 00:09:38.040
+<v Speaker1>Expresan su entusiasmo por el futuro de una optimización demostrable en la teoría de juegos, pero también expresan su preocupación por el impacto negativo de la inteligencia artificial en la sociedad.
+
+55
+00:09:38.920 --> 00:10:06.310
+<v Speaker1>El podcast cubre una amplia gama de temas como el póker, la estrategia empresarial, la estrategia militar, la configuración de algoritmos, el intercambio de riñones, las subastas de aprovisionamiento combinatorio, la inteligencia artificial, la teoría de juegos, las armas nucleares, el cambio climático, el diseño del mercado, los vehículos autónomos y la resolución de juegos.
+
+56
+00:10:07.370 --> 00:10:18.440
+<v Speaker1>El ponente está interesado en las técnicas escalables para la programación de números enteros y en la aplicación de técnicas de última generación en beneficio de diversos sectores y actores.
+
+57
+00:10:19.540 --> 00:10:31.720
+<v Speaker1>Expresan su preocupación por el posible uso indebido de la IA y la amenaza de una guerra nuclear, al tiempo que discuten el potencial de los avances en la IA y el impacto de los vehículos autónomos.
+
+58
+00:10:33.000 --> 00:10:48.180
+<v Speaker1>El podcast hace hincapié en la necesidad de soluciones de mercado y tecnológicas para problemas como la contaminación y en la importancia de encontrar líderes internos a nivel de los clientes para impulsar el cambio y evitar resultados negativos en el futuro.
