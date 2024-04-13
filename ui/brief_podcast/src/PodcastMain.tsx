@@ -39,11 +39,11 @@ Profile Button
 
 function PodcastMain() {
   const [podcastsInfo, setPodcastsInfo] = useState([])
-  const host='http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:5173/'
+  const host='http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:5173/'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: podcasts_info} = await axios.get('http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:8080/podcasts_info');
+      const {data: podcasts_info} = await axios.get('http://ec2-34-217-180-248.us-west-2.compute.amazonaws.com:8080/podcasts_info');
       setPodcastsInfo(podcasts_info)
     }
     fetchData()
@@ -64,7 +64,7 @@ function PodcastMain() {
                 <img className="w-[37px] h-[34px]" src={host+"/assets/AppLogo.svg"} />
                 <div className="w-[87px] h-[27px] text-black text-xl font-semibold font-['Poppins']">Browse</div>
             </div>
-            <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What you want to hear today?</div>
+            <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What do you want to hear today?</div>
         </div>
         <div className="w-[327px] h-14 relative">
             <div className="w-[327px] h-14 left-0 top-0 absolute bg-neutral-100 rounded-[14px]" />
