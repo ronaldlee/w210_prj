@@ -39,11 +39,12 @@ Profile Button
 
 function PodcastMain() {
   const [podcastsInfo, setPodcastsInfo] = useState([])
-  const host='http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:5173/'
+  const host='http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/'
+  const serverHost='/'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: podcasts_info} = await axios.get('http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:8080/podcasts_info');
+      const {data: podcasts_info} = await axios.get(serverHost+'service/podcasts_info');
       setPodcastsInfo(podcasts_info)
     }
     fetchData()
@@ -62,9 +63,9 @@ function PodcastMain() {
         <div className="h-[69px] flex-col justify-center items-start gap-1 inline-flex">
             <div className="self-stretch h-[47px] pr-[190px] pt-[13px] justify-start items-end gap-[7px] inline-flex">
                 <img className="w-[37px] h-[34px]" src={host+"/assets/AppLogo.svg"} />
-                <div className="w-[87px] h-[27px] text-black text-xl font-semibold font-['Poppins']">Browse</div>
+                <div className="w-[87px] h-[27px] text-black text-xl font-semibold font-['Poppins']">EchoBrief</div>
             </div>
-            <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What you want to hear today?</div>
+            <div className="text-neutral-400 text-xs font-normal font-['Poppins']">What do you want to hear today?</div>
         </div>
         <div className="w-[327px] h-14 relative">
             <div className="w-[327px] h-14 left-0 top-0 absolute bg-neutral-100 rounded-[14px]" />
@@ -78,7 +79,7 @@ function PodcastMain() {
             <div className="w-[327px] h-[430.07px] left-0 top-[54.93px] absolute flex-col justify-start items-start gap-4 inline-flex">
 
                 {podcastsInfo.map(podcast =>
-                <div className="w-[327px] justify-between items-center inline-flex">
+                <div onClick={() => routeChange(`/podcast/${podcast.podcast_id}`)} className="w-[327px] justify-between items-center inline-flex">
                     <div className="justify-start items-center gap-3.5 flex">
                         <img className="w-[78px] h-[77px] rounded-[10px]" src={host+podcast.thumbnail} />
                         <div className="flex-col justify-start items-start gap-2 inline-flex">
@@ -86,7 +87,7 @@ function PodcastMain() {
                             <div className="text-neutral-400 text-xs font-medium font-['Poppins']">{podcast.org}</div>
                         </div>
                     </div>
-                    <div onClick={() => routeChange(`/podcast/${podcast.podcast_id}`)} className="w-8 h-8 relative"><img src={host+"/assets/PlayButtonIcon.svg"}/></div>
+                    <div className="w-8 h-8 relative"><img src={host+"/assets/chevron.svg"}/></div>
                 </div>
                 )}
 

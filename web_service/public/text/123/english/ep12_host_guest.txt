@@ -1,0 +1,397 @@
+Lex:
+Hello everyone, I'm Lex Friedman. Today, I had a fascinating conversation with Thomas Sanholm, a professor at CMU and co-creator of Labratus, the first AI system to beat top human players in Heads Up No Limit Texas Holdem. Thomas has published over 450 papers on game theory and machine learning, including a best paper in 2017 at NIPS, now renamed to Newrips. His research and companies have had a wide-reaching impact in the real world. This conversation is part of the MIT course on artificial general intelligence and the artificial intelligence podcast.
+
+Tuomas:
+Heads Up No Limit Texas Holdem has become a key benchmark for testing algorithms in the AI community. It's a game played by humans, mostly online for large sums of money, and typically only experts play it. With only two players involved, it becomes a competitive game of skill and strategy, much like chess or go, but with the added challenge of imperfect information.
+
+Lex:
+So in Texas Holdem, there's two cards that you only see that belong to you.
+
+Tuomas:
+Yeah.
+
+Lex:
+And there is, they gradually lay out some cards that add up overall to five cards that everybody can see.
+
+Tuomas:
+Yeah.
+
+Lex:
+So the imperfect nature of the information is the two cards that you're holding in your hand up front.
+
+Tuomas:
+Yeah. So as you said, you first get two cards in private each and then there's a betting round. Then you get three cards in public on the table. Then there's a betting round. Then you get the fourth card in public on the table. There's a betting round. Then you get the 5th card on the table. There's a betting round. So there's a total of four betting rounds and four tranches of information revelation if you will. The only the first tranche is private and then it's public from there.
+
+Lex:
+The game I'm referring to is probably the most popular game in AI and among the general public when it comes to dealing with imperfect information. It's also a favorite spectator game to watch, much like chess. In fact, it sets the bar for what is considered intelligence in AI. In 2017, Labratus, a little Latin there, beats four expert human players. It was a significant event that taught us a lot and was quite a process for those who haven't read the papers and the study.
+
+Tuomas:
+I invited four of the top 10 players in Heads Up No Limit, Texas Holdem to Pittsburgh to play at the Reverse Casino for 20 days. We aimed to get 120,000 hands in for statistical significance, and I raised 200,000 as an incentive for them to play. The players were paid based on how they did against the AI, and although I originally explored playing for money, it was not allowed by the Pennsylvania Gaming Board. This event was much like an exhibit for a musician or a boxer.
+
+Lex:
+Nevertheless, the players were able to earn close to $2 million, which is quite impressive and inspiring. I am curious about the details of how they were able to do this, such as what they were looking at and the interface they were using.
+
+Tuomas:
+The top players are accustomed to playing the game online through a user interface. The game was set up with a layout that resembled a table on a screen, displaying the cards, bets, and even the betting history for the human player. This access to the betting history was provided to ensure fairness, even though it was acknowledged that the top players wouldn't have forgotten the details of the game anyway.
+
+Lex:
+So what was that like? I mean, that was an incredible accomplishment. So what did it feel like before the event? Did you have doubt, hope? Where was your confidence at?
+
+Tuomas:
+I organized a brains versus AI competition 18 months earlier with a previous AI called Cloudyco, but we couldn't beat the humans. This time around, I organized a new competition with a stronger AI called Libratus. I thought we had about a 50-50 shot against the top humans, but the international betting sites put us as a four to one or five to one underdog. It's interesting how people tend to believe in people over AI, and even have overconfidence in other people's abilities compared to AI performance.
+
+Lex:
+Do you ever wonder why poker is seen as something special and almost magical? It's because of the focus on human behavior - the facial expressions, body language, and tells. This is why people believe that humans will always outperform AI in poker. But what about the role of these tells and the romanticized ideas in human versus human poker? It's an interesting concept to explore.
+
+Tuomas:
+Humans tend to trust other humans more than AI and have overconfidence in them because they have witnessed top players perform exceptionally well. It's difficult for them to believe that an AI could surpass these top players until they see it happen. Additionally, top players are adept at hiding tells, making it not worth the effort to find tells in each other. As a result, at the highest levels of poker, tells become a much smaller aspect of the game.
+
+Lex:
+The amount of strategies, the amount of possible actions is very large, 10 to the power of 100 plus. So there has to be some, I've read a few of the papers related, it has to form some abstractions of various hands and actions. So what kind of abstractions are effective for the game of poker?
+
+Tuomas:
+Yeah, so when you go from a game tree that's 10 to the 161, especially in an imperfect information game, it's way too large to solve directly. You wanna abstract it first. And abstraction in games is much trickier than abstraction in MDPs or other single agent settings. Because you have these abstraction pathologies that if I have a finer grained abstraction, the strategy that I can get from that for the real game might actually be worse than the strategy I can get from the coarse grained abstraction. So you have to be very careful.
+
+Lex:
+Now the kinds of abstractions, just to zoom out, we're talking about, there's the hands abstractions and then there's betting strategies.
+
+Tuomas:
+Yeah,
+
+Lex:
+betting actions,
+
+Tuomas:
+In games like poker, it's crucial to understand the concepts of information abstraction and action abstraction. Information abstraction involves looking at the value of the hand and predicting how it might evolve over time. This process is automated and uses potential aware abstraction to consider the potential outcomes of the hand. On the other hand, action abstraction is based on past human and AI gameplay. Initially, we used automated technology for action abstraction, but it was not scalable for the entire game.
+
+Lex:
+So, what's more important in a game? Is it the strength of the hand or the way you play them, the actions? Does the romanticized notion that it doesn't matter what hands you have hold true? Perhaps the actions, the betting, may be the key to winning regardless of the hands you are dealt.
+
+Tuomas:
+That's why it's important to play a lot of hands in order to minimize the impact of luck. Even with thousands of hands, luck can still have a significant influence, especially in a game like No Limit Texas Holdem which has a high variance. This is why it's necessary to play over 100,000 hands to achieve statistical significance.
+
+Lex:
+So let me ask another way this question. If you didn't even look at your hands, but they didn't know that, the opponents didn't know that, how well would you be able to do?
+
+Tuomas:
+Annette Oberstad, a Norwegian female poker player, once won a tournament by playing extremely rare hands. However, it is not a good strategy to play like that in general.
+
+Lex:
+So, as I understand, Labradus does not currently utilize deep learning methods. However, I believe there is potential for Labradus to incorporate an AlphaGo type approach for estimating the quality for function estimator. This brings me to the comparison with DeepStack, which does use deep learning. I am curious about the potential for learning methods to enhance the way that Labradus plays in the game of poker.
+
+Tuomas:
+Labradus was able to play very well without using any learning methods. It's interesting to note that we now have papers on things that do use learning techniques.
+
+Lex:
+Excellent.
+
+Tuomas:
+Deep learning in imperfect information games, such as poker, presents unique challenges compared to perfect information games like Go or chess. In imperfect information games, the value of a state is not solely determined by the exact state, but also by both players' beliefs. This complexity requires a different approach, such as allowing the opponent to take different strategies at the leaf of the search tree, leading to a more cautious look ahead search. Additionally, DeepStack utilized deep learning to learn the values of states, incorporating belief distributions into the process.
+
+Lex:
+When you talk about look ahead for DeepStack or with Libratus, does it mean, considering every possibility that the game can evolve, are we talking about extremely, sort of this exponentially growth of a tree?
+
+Tuomas:
+So, the main focus here is on the different search algorithm and techniques, similar to what we see in alpha beta search or Monte Carlo tree search. This also involves dealing with leaves differently, especially in depth limited lookaheads. The new paper introduces depth limited search for imperfect information games, allowing for sound depth limited lookahead from the beginning of the game. In contrast, in Libratus, the lookahead was only done at the end of the game.
+
+Lex:
+So, and then the other side, this belief distribution, so is it explicitly modeled what kind of beliefs that the opponent might have?
+
+Tuomas:
+Yeah, it is explicitly modeled that beliefs are output, not input. The starting beliefs are input, but they just fall from the rules of the game because we know that the dealer deals uniformly from the deck, so every pair of cards that you might have is equally likely. That's called card removal and it's very important. In Heads Up, the dealing always comes from a single deck, so you can assume that if I have the ace of spades, I know you don't have an ace of spades.
+
+Lex:
+Great, so in the beginning, your belief is basically the fact that it's a fair dealing of hands, but how do you start to adjust that belief?
+
+Tuomas:
+That's where the beauty of game theory comes in. Nash equilibrium, introduced by John Nash in 1950, defines rational play in games with more than one player. It establishes pairs of strategies for each player, ensuring that neither player wants to deviate given the other doesn't deviate. But it goes beyond that - it also defines beliefs and probability distribution over real world states. In essence, Nash equilibrium tells us exactly what the probability distribution is over those real world states in our minds.
+
+Lex:
+How does Nash equilibrium give you that distribution? So why?
+
+Tuomas:
+I'll do a simple example. So you know the game Rock, Paper, Scissors? So we can draw it as player one moves first and then player two moves. But of course, it's important that player two doesn't know what player one moved, otherwise player two would win every time. So we can draw that as an information set where player one makes one of three moves first, and then there's an information set for player two. So player two doesn't know which of those nodes the world is in. But once we know the strategy for player one, Nash equilibrium will say that you play 1/3 Rock, 1/3 Paper, 1/3 Scissors. From that, I can derive my beliefs on the information set that they're 1/3, 1/3, 1/3.
+
+Lex:
+So Bayes gives you that. Bayes gives you. But is that specific to a particular player, or is it something you quickly update with the specific player?
+
+Tuomas:
+Game theory is not player specific, so we don't need any data or history of how players or AI have played before. It's all about rationality and thinking about what a rational opponent would do. This is the idea of game theory - a data-free, opponent-free approach.
+
+Lex:
+So it comes from the design of the game as opposed to the design of the player.
+
+Tuomas:
+Exactly, there's no opponent modeling per se in Librarus. We've worked on combining opponent modeling with game theory to exploit weak players even more, but we didn't turn that on for these players because they are too good. When you start to exploit an opponent, you typically open yourself up to exploitation, and these guys are experts in counter exploitation. So, I decided that we're not gonna turn that stuff on.
+
+Lex:
+Actually, I saw a few of your papers exploiting opponents. It sounded very interesting to explore. Do you think there's room for exploitation generally outside of Librarus? Is there a subject or people differences that could be exploited, maybe not just in poker, but in general interactions and negotiations, all these other domains that you're considering?
+
+Tuomas:
+I believe that in zero sum games, it is possible to predict the behavior of a rational opponent. However, when facing a weak player, it may be necessary to adjust our strategy in order to exploit their weaknesses. While a game theoretic strategy is unbeatable, it may not fully maximize our winnings against the opponent. This is where the hybrid approach comes in, where we start with a game theoretic strategy and then adjust it based on the opponent's behavior in order to gain an advantage while still staying fairly close to the original strategy.
+
+Lex:
+How do you do that? Do you try to vary up strategies, make it unpredictable? It's like, what is it, tit for tat strategies in Prisoner's Dilemma or?
+
+Tuomas:
+Well, that's a repeated game. Simple Prisoner's Dilemma, repeated games. But even there, there's no proof that says that that's the best thing. But experimentally, it actually does well.
+
+Lex:
+So when we talk about games, there are different types to consider. We have perfect information games where all the information is on the table, and then there are imperfect information games. We also have repeated games that you play over and over, as well as zero sum and non zero sum games. Another important distinction is between two player and more players games. It's crucial to understand the key differences between these types of games.
+
+Tuomas:
+Repeated games involve playing the same exact game over and over, but finding a purely repeated game is actually very rare in the world. Extensive form games with information sets represent incomplete information and allow for repetitive interactions, but they are still a coarse model of what's going on. Moving up from simple repeated matrix games, there are stochastic games where actions determine the distribution over next games. Poker is an example of an extensive form game and is the most general setting that the AI community has been working on and being benchmarked on.
+
+Lex:
+Can you describe extensive form games? What's the model here?
+
+Tuomas:
+Yeah, so if you're familiar with the tree form, so it's really the tree form. Like in chess, there's a search tree.
+
+Lex:
+Versus a matrix.
+
+Tuomas:
+In game theory, there are different forms of games such as the matrix form, bi matrix form, and normal form game. The tree form allows for certain types of reasoning that are lost in the normal form due to the lack of sequentiality. Moving from tree form to normal form involves a certain form of equivalence, but it results in the loss of some information. The distinction between multiplayer and two player games is important, particularly in terms of conceptual and computational ease. Two player zero sum games are conceptually and computationally easier compared to general sum games, and there is a significant gap in complexity between different types of games, at least in theory.
+
+Lex:
+Can you maybe non mathematically provide the intuition why it all falls apart with three or more players? It seems like you should still be able to have a Nash equilibrium that's instructive, that holds.
+
+Tuomas:
+It is true that all finite games have a Nash equilibrium, as John Nash proved. The issue lies in the fact that there can be multiple equilibriums to choose from, leading to the question of which one to select. Selecting strategies from different equilibriums can result in a loss of joint benefit, and in non zero sum games, both players could be better off by choosing a different strategy. In three player games, collusion and other problems can also arise.
+
+Lex:
+Noah Brown brought up an interesting point in the AMA on Reddit about the potential for collaboration between poker players to make the game extremely difficult for AI to solve. He mentioned that there are not many ways to make poker more difficult, but the idea of players cooperating with each other would pose a significant challenge for AI. This raises the question of why collaboration would have such a significant impact, and whether I agree with this idea.
+
+Tuomas:
+I've been heavily involved in researching coalitional games and recently co-authored a paper with my student Gabriele Farina and other collaborators, which we presented at NIPS. Dealing with collusion in games presents a different and more challenging problem, and we found that some game representations don't allow for good computation. As a result, we introduced a new game representation to address this issue.
+
+Lex:
+Is that kind of cooperation part of the model? Are you, do you have, do you have information about the fact that other players are cooperating or is it just this chaos that where nothing is known?
+
+Tuomas:
+So there's some things unknown.
+
+Lex:
+Can you give an example of a collusion type game or is it usually?
+
+Tuomas:
+Coordination in a team is similar to a game of bridge. Just like in bridge, our payoffs are the same, but we are limited in our communication. We have to coordinate our strategies ahead of time and find signals that both teams can understand. While some games have coordination built into the rules, in other situations like auctions, negotiations, and diplomatic relationships, coordination can still be very helpful for the colluders.
+
+Lex:
+I've often used negotiation strategies from my experience in poker. I believe that the same principles can be applied to other domains as well. It's about transitioning from the game of poker to real world negotiations and applying the same strategic mindset to different situations.
+
+Tuomas:
+I actually have two startup companies doing exactly that. One is called Strategic Machine, and that's for kind of business applications, gaming, sports, all sorts of things like that. Any applications of this to business and to sports and to gaming, to various types of things in finance, electricity markets and so on. And the other is called Strategy Robot, where we are taking these to military security, cyber security and intelligence applications.
+
+Lex:
+I think you worked a little bit in, how do you put it, advertisement, sort of suggesting ads kind of thing, auction.
+
+Tuomas:
+That's another company, optimized markets. But that's much more about a combinatorial market and optimization based technology. That's not using these game theoretic reasoning technologies.
+
+Lex:
+I see, okay, so what sort of high level do you think about our ability to use game theoretic concepts to model human behavior? Do you think human behavior is amenable to this kind of modeling outside of the poker games, and where have you seen it done successfully in your work?
+
+Tuomas:
+I'm not sure the goal really is modeling humans. Like for example, if I'm playing a zero sum game, I don't really care that the opponent is actually following my model of rational behavior, because if they're not, that's even better for me.
+
+Lex:
+Formalizing the interaction in games is crucial for analysis, and mechanism design is used to create games with specific outcomes. In the world of autonomous vehicles, the nonverbal communication between pedestrians and cars creates a tension game, where pedestrians trust that cars won't harm them, even when breaking the law. Modeling this human behavior with imperfect information approaches like game theory poses a significant challenge. How do we even begin to design a game to describe this situation and solve it?
+
+Tuomas:
+I haven't really thought about jaywalking, but one thing that I think could be a good application in autonomous vehicles is the following. So let's say that you have fleets of autonomous cars operating by different companies. If you think about the rules of the road, they define certain legal rules, but that still leaves a huge strategy space open. Like as a simple example, when cars merge, how humans merge, they slow down and look at each other and try to merge. Wouldn't it be better if these situations would already be prenegotiated so we can actually merge at full speed and we know that this is the situation, this is how we do it, and it's all gonna be faster. But there are way too many situations to negotiate manually. So you could use automated negotiation, this is the idea at least, you could use automated negotiation to negotiate all of these situations or many of them in advance. And of course it might be that, hey, maybe you're not gonna always let me go first. Maybe you said, okay, well, in these situations, I'll let you go first, but in exchange, you're gonna give me too much, you're gonna let me go first in this situation. So it's this huge combinatorial negotiation.
+
+Lex:
+And do you think there's room in that example of merging to model this whole situation as an imperfect information game or do you really want to consider it to be a perfect?
+
+Tuomas:
+No, that's a good question, yeah. That's a good question.
+
+Lex:
+Do you pay the price of assuming that you don't know everything?
+
+Tuomas:
+Yeah, I don't know. It's certainly much easier. Games with perfect information are much easier. So if you can't get away with it, you should. But if the real situation is of imperfect information, then you're gonna have to deal with imperfect information.
+
+Lex:
+The Annual Computer Poker Competition has taught me valuable lessons about the incredible accomplishment of AI in beating human players. Looking at the history of Deep Blue and AlphaGo, it is evident that AI has stepped up in an engineering and scientific effort to achieve this feat. This experience has provided insights into designing AI systems for games and has significant implications for the future of AI development.
+
+Tuomas:
+In my group, we focus on performance oriented research, covering the entire spectrum from idea to theory, experiments, system building, and commercialization. I believe that in AI, it's essential to build and evaluate big systems at scale to truly understand what works and what doesn't. The discrepancy between theoretical superiority and practical performance has been evident, highlighting the importance of real-world testing. On a personal note, organizing the first man vs. machine poker competition led to aggressive backlash from the poker community, with many feeling threatened by the potential of AI surpassing human capabilities.
+
+Lex:
+Do you think the same was true for chess? Because right now they just completed the world championships in chess, and humans just started ignoring the fact that there's AI systems now that outperform humans and they still enjoy the game, it's still a beautiful game.
+
+Tuomas:
+I didn't think of myself as somebody who was gonna kill the game, and I don't think I did. I've really learned to love this game. I've learned so many nuances about poker from these AIs, and they've really changed how the game is played. The top humans are now incorporating AI strategies into their own play. So if anything, to me, our work has made poker a richer, more interesting game for humans to play, not something that is gonna steer humans away from it entirely.
+
+Lex:
+Being brave and putting ideas to the test is rare in academia. It's pretty brave to put your ideas to the test in the way you described, saying that sometimes good ideas don't work when you actually try to apply them at scale. So where does that come from? I mean, if I could give advice to people, what drives me in that sense? Were you always this way? I mean, it takes a brave person, I guess is what I'm saying, to test their ideas and to see if this thing actually works against human top human players and so on.
+
+Tuomas:
+Yeah, I don't know about brave, but it takes a lot of work. It takes a lot of work and a lot of time to organize, to make something big and to organize an event and stuff like that.
+
+Lex:
+And what drives you in that effort? Because you could still, I would argue, get a best paper award at NIPS as you did in 17 without doing this.
+
+Tuomas:
+I believe it's crucial to take action in the real world and at scale, as that's where the proof is. In this case, there was a competition to beat the top humans at Heads Up No Limit, Texas Holdem, which became a significant challenge for different groups.
+
+Lex:
+Yeah, so a little friendly competition could do wonders for progress.
+
+Tuomas:
+Yes, absolutely.
+
+Lex:
+I find mechanism design to be a really interesting topic, although it's quite new to me. I've been an observer of mechanisms, particularly in politics, and I recently read about automated mechanism design in a paper. It's all about designing the rules of the game to achieve a certain desirable outcome, and I'm intrigued by the idea of doing this in an automatic fashion rather than fine-tuning it. This leads me to wonder about the potential application of automated mechanism design in complex systems like our political system and even in something as simple as traffic lights. Can we design these systems to have outcomes that we want in an automated fashion? I'm really curious to learn about the lessons that can be drawn from this work.
+
+Tuomas:
+Yeah, so I still very much believe in the automated mechanism design direction.
+
+Lex:
+Yes.
+
+Tuomas:
+But it's not a panacea. There are impossibility results in mechanism design saying that there is no mechanism that accomplishes objective X in class C. So it's not going to, there's no way using any mechanism design tools, manual or automated, to do certain things in mechanism design.
+
+Lex:
+Can you describe that again? So meaning it's impossible to achieve that?
+
+Tuomas:
+Yeah, yeah.
+
+Lex:
+And it's unlikely.
+
+Tuomas:
+Impossibility results in mechanism design do not mean that all cases are impossible, just some of them. Automated mechanism design allows for designing for specific settings at a time, rather than a whole class. It is possible to carve islands of possibility within known impossible classes. The Meyerson Satethweight theorem by Roger Meyerson and Mark Satethweight from 1983 shows that efficient trade under imperfect information is not always impossible.
+
+Lex:
+Depending on how they design the game, okay.
+
+Tuomas:
+Depending on how I design the game, it can determine its possibilities. And of course, the impossibility result is still there, but I can find spots within this impossible class where, in those spots, I don't have the impossibility.
+
+Lex:
+I believe it's important to consider the lessons we can draw towards politics, human interaction, and designing mechanisms. This concept is applicable not only to politics but also to business and negotiations. We need to focus on designing rules that have certain outcomes in order to create a more effective and fair system.
+
+Tuomas:
+Yeah, yeah, I do think so.
+
+Lex:
+Have you seen that successfully done? They haven't really, oh, you mean mechanism design or automated mechanism design?
+
+
+Tuomas:
+Mechanism design has had limited success in real world situations, as most of them are not sound from a mechanism design perspective. Even in cases where knowledgeable mechanism design people are involved, they tend to apply insights from the theory rather than the mechanisms directly. The FCC spectrum auctions serve as a famous example, where bidding truthfully is not the best strategy, despite the involvement of excellent economists with no game theory. In high stakes auctions worth tens of billions of dollars, truth telling is not the best strategy, and there is no single optimal bidding strategy known for those auctions.
+
+Lex:
+What's the challenge of coming up with an optimal, because there's a lot of players and there's imperfect.
+
+Tuomas:
+It's not so much that a lot of players, but many items for sale, and these mechanisms are such that even with just two items or one item, bidding truthfully wouldn't be the best strategy.
+
+Lex:
+If you look at the history of AI, it's marked by seminal events. AlphaGo beating a world champion human Go player, I would put Liberatus winning the Heads Up No Limit Holdem as one of such event.
+
+Tuomas:
+Thank you.
+
+Lex:
+And what do you think is the next such event, whether it's in your life or in the broadly AI community that you think might be out there that would surprise the world?
+
+Tuomas:
+The widely agreed upon benchmark for game solving was Heads Up No Limit Texas Holdem. While there are other potential benchmarks such as StarCraft, Dota 2, Diplomacy, and Hanabi, it is uncertain what the next benchmark in game solving will be. The collaboration of different groups working on the same problem drove application independent techniques forward over 10 years.
+
+Lex:
+Do you think there's an open problem that excites you that you start moving away from games into real world games, like say the stock market trading?
+
+Tuomas:
+Yeah, so that's kind of how I am. I am probably not going to work as hard on these recreational benchmarks. I'm doing two startups on game solving technology, Strategic Machine and Strategy Robot, and we're really interested in pushing this stuff into practice.
+
+Lex:
+What I want you to consider is a result that may seem unlikely based on statistics, but could be achieved with a breakthrough in the next five or ten years. Think about something powerful and surprising that would be a game-changer.
+
+Tuomas:
+I believe that game theory is currently in a different situation compared to machine learning. While machine learning is a mature technology with proven success in the real world, game solving has almost no applications yet. The next big breakthrough, in my opinion, would be to demonstrate that military planning or business strategy can be done strategically using computational game theory. This is what I would like to see as the next five or 10 year goal.
+
+Lex:
+I've been thinking about the transparency and explainability of machine learning methods and neural networks. It's clear that they have limitations in this regard. But I'm wondering if game theoretic methods, such as Nash equilibria, face similar challenges. Specifically, when it comes to military operations, do the strategies derived from game theoretic methods make sense and are they explainable, or do they suffer from the same problems as neural networks?
+
+Tuomas:
+So, when it comes to game theoretic strategies like Nash equilibrium, I would say that they have provable properties and solution quality guarantees, unlike deep learning where there's a lot of uncertainty. Even though the strategies may not be easily understandable by humans, at least we have the assurance of solution quality.
+
+Lex:
+So do you see business operations, strategic operations, or even military in the future being at least the strong candidates being proposed by automated systems? Do you see that?
+
+Tuomas:
+Yeah, I do, I do. But that's more of a belief than a substantiated fact.
+
+Lex:
+Depending on where you land in optimism or pessimism, the future can be really exciting, especially if there are provable things in terms of optimality. However, there are also concerns about the existential threats of artificial intelligence, especially in the context of games like poker being solved. The negative impact of AI on society is a valid concern. So, the question is, are you more optimistic about the positive impacts of AI, or are you equally concerned about its potential negative impacts?
+
+Tuomas:
+I am much more optimistic about the positive impacts. In my own work, we've run the nationwide kidney exchange, saving hundreds of lives and increasing employment in the healthcare sector. Additionally, through combinatorial sourcing auctions, we have increased supply chain efficiency by 12.6%, resulting in over $6 billion of efficiency improvement. These efforts are making the world a better place.
+
+Lex:
+So a huge positive impact in the near term, but sort of to stay in it for a little longer, because I think game theory has a role to play here.
+
+Tuomas:
+Oh, let me actually come back on that as one thing. I think AI is also going to make the world much safer. So that's another aspect that often gets overlooked.
+
+Lex:
+I've been thinking a lot about the existential threats of AI, and I recently had a conversation with Max Tegmark and Stuart Russell who share the same concerns. One of the key issues we discussed was the value misalignment in AI systems, where they may operate towards goals that are not aligned with human civilization. It seems like game theory could play a crucial role in ensuring that AI values are aligned with human values. I'm curious to hear your thoughts on this. How do you think AI might help address this problem and ultimately make the world a safer place for all of us?
+
+Tuomas:
+Value misalignment is often considered a theoretical worry, but in my experience, it has not been a practical problem in real applications. I recall a situation in the late eighties when we were building transportation optimization systems, and someone suggested having high asset utilization as an objective. I demonstrated that this would lead to impractical solutions, such as loading trucks full and driving in circles without delivering anything. While I acknowledge the potential harm of having the wrong objective for AI optimization, I have not seen this phenomenon materialize in practice.
+
+Lex:
+There's this gap between theory and reality that I find very difficult to articulate. It's the contrast between what we can theoretically imagine, such as the worst possible case scenarios, and what actually happens in reality. Take for example the existence of 10,000 nuclear weapons in the world, and the surprising fact that a nuclear war has not broken out despite the theoretical possibility. I wonder about this from a game theoretic perspective - why is it that in theory things could go terribly wrong, yet they have not?
+
+Tuomas:
+Yeah,
+
+Lex:
+how do you think about it?
+
+Tuomas:
+I do think about the biggest threats facing mankind a lot, and for me, those are climate change and nuclear war. I've actually tried to do something about climate change through two of my startups, commissioning studies to find solutions. However, I've realized that political will plays a significant role in addressing these issues, as seen in the lack of success in pollution credit markets.
+
+Lex:
+And then the nuclear side, it's more, so global warming is a more encroaching problem. Nuclear weapons have been here. It's an obvious problem that's just been sitting there. So how do you think about, what is the mechanism design there that just made everything seem stable? And are you still extremely worried?
+
+Tuomas:
+I am still extremely worried about the current situation. The simple game theory of mutual assured destruction doesn't require any computation with small matrices. It's such that nobody wants to initiate, especially with the smaller threshold of initiating and the presence of smaller countries and non-nation actors who may have access to nuclear weapons. This makes the situation riskier now than it was maybe ever before.
+
+Lex:
+The most exciting thing for me right now is the application of AI. I've been thinking about the future and my plans with several companies. Being here at NIPS, I am really looking forward to exploring the most exciting developments in the field.
+
+Tuomas:
+The number one thing for me right now is coming up with scalable techniques for game solving and applying them into the real world. I'm still very interested in market design as well. And we're doing that in the optimized markets, but I'm most interested if number one right now is strategic machine strategy robot, getting that technology out there and seeing as you were in the trenches doing applications, what needs to be actually filled, what technology gaps still need to be filled. So it's so hard to just put your feet on the table and imagine what needs to be done. But when you're actually doing real applications, the applications tell you what needs to be done. And I really enjoy that interaction.
+
+Lex:
+Is it a challenging process to apply some of the state of the art techniques you're working on and having the various players in industry or the military or people who could really benefit from it actually use it? What's that process like of, autonomous vehicles work with automotive companies and they're in many ways are a little bit old fashioned. It's difficult. They really want to use this technology. There's clearly will have a significant benefit, but the systems aren't quite in place to easily have them integrated in terms of data, in terms of compute, in terms of all these kinds of things. So is that one of the bigger challenges that you're facing and how do you tackle that challenge?
+
+Tuomas:
+I believe that one of the biggest challenges we face is the slowness and inertia of doing things the same way we've always done them. It's crucial to find internal champions at the customer who understand the necessity for change and the potential consequences if things remain the same. What I find truly fascinating is the interest in autonomous vehicles, not only from traditional car makers but also from tech companies like Google and Baidu who have no previous involvement in the transportation industry.
+
+Lex:
+I am absolutely thrilled about the potential impact of these ideas in the world. When it comes to technology, ideas, and research, I am particularly interested in exploring new directions. I am especially excited about the approaches for imperfect information games that were discussed, as well as the potential application of deep learning to solve some of these complex problems.
+
+Tuomas:
+Yeah, yeah, lots of different things in the game solving. So solving even bigger games, games where you have more hidden action of the player actions as well. Poker is a game where really the chance actions are hidden or some of them are hidden, but the player actions are public. Multiplayer games of various sorts, collusion, opponent exploitation, all and even longer games. So games that basically go forever, but they're not repeated. So see extensive fun games that go forever. What would that even look like? How do you represent that? How do you solve that?
+
+Lex:
+What's an example of a game like that? Or is this some of the stochastic games that you mentioned?
+
+Tuomas:
+Thinking about business strategy and military strategy in the long term is crucial. It's not just about modeling a particular interaction, but considering how these strategies will evolve over time. Additionally, I am very interested in learning more scalable techniques for integer programming, and our recent ICML paper on the topic is the first to provide theoretical generalization guarantees. It's fascinating to see how algorithm configuration has been ongoing for 17 years without any generalization theory before.
+
+Lex:
+Well, this is really exciting and it's a huge honor to talk to you. Thank you so much, Tomas. Thank you for bringing Labradus to the world and all the great work you're doing.
+
+Tuomas:
+Well, thank you very much. It's been fun. Good questions
+

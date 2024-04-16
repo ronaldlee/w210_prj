@@ -50,11 +50,12 @@ function Podcast() {
     }
   )
   const { podcastId } = useParams()
-  const host='http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:5173/'
+  const host='http://ec2-34-212-82-129.us-west-2.compute.amazonaws.com/'
+  const serverHost='/'
 
   useEffect( () => {
     async function fetchData() {
-      const {data: podcast_info} = await axios.get('http://ec2-34-212-30-186.us-west-2.compute.amazonaws.com:8080/podcast/'+podcastId);
+      const {data: podcast_info} = await axios.get(serverHost+'service/podcast/'+podcastId);
 
       setPodcastInfo(podcast_info)
 
@@ -86,7 +87,7 @@ function Podcast() {
     <div className="w-[375px] h-[727px] left-0 top-0 absolute">
         <img className="w-[375px] h-[393px] left-0 top-0 absolute rounded-tl-[32px] rounded-tr-[32px]" src={host+podcastInfo['profile_pic']} />
         <div className="left-[24px] top-[422px] absolute text-neutral-800 text-lg font-semibold font-['Poppins']">All Episodes</div>
-        <div className="left-[24px] top-[478px] absolute flex-col justify-start items-start gap-4 inline-flex">
+        <div className="left-[24px] top-[478px] h-[250px] absolute overflow-y-auto flex flex-col justify-start items-start">
 
             {podcastInfo['episodes'].map(episode =>
             <div className="w-[327px] h-[101px] justify-between items-start inline-flex">
@@ -95,13 +96,10 @@ function Podcast() {
                     <div className="w-[189px] h-[99px] flex-col justify-start items-start gap-2 inline-flex">
                         <div className="w-[175px] text-neutral-800 text-base font-medium font-['Poppins'] leading-snug">{episode.name}</div>
                         <div className="text-neutral-400 text-xs font-medium font-['Poppins']">{episode.length} • {episode.release_date}</div>
-                        <div className="pr-[11px] pt-[0.50px] pb-[11.50px] justify-start items-center inline-flex">
-                            <img className="w-[178px] h-2.5 rounded-[5px]" src="https://via.placeholder.com/178x10" />
-                        </div>
                     </div>
                 </div>
                 <div className="pl-[13.50px] flex-col justify-center items-start gap-2.5 inline-flex">
-                    <div className="w-8 h-8 relative flex-col justify-start items-start flex"><img src={host+"/assets/PlayButtonIcon.svg"}/></div>
+                    <div onClick={() => window.open(`${episode.podcast_url}`, '_blank')} className="w-8 h-8 relative flex-col justify-start items-start flex"><img src={host+"/assets/PlayButtonIcon.svg"}/></div>
                     <div onClick={() => routeChange(`/summary/${podcastId}/${episode.episode_id}`)} className="self-stretch h-[35px] pl-0.5 pt-[3px] pb-0.5 bg-neutral-700 rounded-[10px] flex-col justify-center items-center inline-flex">
                         <div className="w-[30px] h-[30px] relative flex-col justify-start items-start flex"><img src={host+"/assets/AiIcon.svg"}/></div>
                     </div>
